@@ -6,6 +6,14 @@ import pandas as pd
 from PIL import Image
 import io
 
+DISEASE_LABELS = [
+    'Atelectasis', 'Cardiomegaly', 'Effusion', 'Infiltration', 'Mass',
+    'Nodule', 'Pneumonia', 'Pneumothorax', 'Consolidation', 'Edema',
+    'Emphysema', 'Fibrosis', 'Pleural_Thickening', 'Hernia'
+]
+
+LABEL_TO_IDX = {label: idx for idx, label in enumerate(DISEASE_LABELS)}
+
 class XrayDataset(Dataset):
     def __init__(self, dataframe, transform=None):
         self.dataframe = dataframe
@@ -14,14 +22,16 @@ class XrayDataset(Dataset):
     def __len__(self):
         return len(self.dataframe)
     
-    # TODO: I think we need to convert labels to multi-hot encoding ([0, 1, 0, 0, ...])
     def __getitem__(self, index):
         row = self.dataframe.iloc[index]
 
         image_bytes = row['image']
         image = Image.open(io.BytesIO(image_bytes['bytes'])).convert('RGB')
 
-        label = torch.tensor(row['label'], dtype=torch.float32)
+        label = torch.zeros(len(DISEASE_LABELS), dtype=torch.float32) # New multi hot encoded list of labels
+        for disease in row['label']:
+            if disease in LABEL_TO_IDX:
+                label[LABEL_TO_IDX[disease]] = 1.0
 
         if self.transform:
             image = self.transform(image)
@@ -45,7 +55,7 @@ def load_data(df_train, df_eval, batch_size=32):
 
     return trainLoader, evalLoader
     
-def load_model(num_diseases=14):
+def load_model(num_diseases=len(DISEASE_LABELS)):
     model = models.densenet121(weights=models.DenseNet121_Weights.DEFAULT)
     num_features = model.classifier.in_features
 
@@ -54,7 +64,7 @@ def load_model(num_diseases=14):
     return model
 
 def train(model, train_loader, epochs, device):
-    criterion = nn.BCEWithLogitsLoss
+    criterion = nn.BCEWithLogitsLoss()
     optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
     model.to(device)
     model.train()
