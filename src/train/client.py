@@ -1,4 +1,5 @@
 import argparse
+import time
 import torch
 import flwr as fl
 from collections import OrderedDict
@@ -59,8 +60,14 @@ if __name__ == "__main__":
 
     model = task.load_model(num_diseases=14)
 
-    # TODO: This address needs to change. Maybe automate with a start script. Idk quite how the setup will look like yet
-    fl.client.start_client(
-        server_address="127.0.0.1:8080",
-        client=Client(model, train_loader, eval_loader, device).to_client()
-    )
+    for attempt in range(10):
+        try:
+            print(f"Connecting to server (attempt {attempt + 1}/10)...")
+            fl.client.start_client(
+                server_address="little-rock:8080",
+                client=Client(model, train_loader, eval_loader, device).to_client()
+            )
+            break
+        except Exception as e:
+            print(f"Failed: {e}")
+            time.sleep(5)

@@ -10,8 +10,8 @@ if __name__ == "__main__":
         fraction_fit=1.0,           # Sample 100% of available clients for training
         fraction_evaluate=1.0,      # Sample 100% of available clients for evaluation
         min_fit_clients=2,          # Minimum number of clients required to start a training round
-        min_evaluate_clients=2,     # Minimum number of clients required to start an eval round
-        min_available_clients=2,    # Wait until at least 2 clients are connected
+        min_evaluate_clients=3,     # Minimum number of clients required to start an eval round
+        min_available_clients=3,    # Wait until all clients are connected
         on_fit_config_fn=lambda server_round: {"local_epochs": 1}, # Send config to clients
     )
 
