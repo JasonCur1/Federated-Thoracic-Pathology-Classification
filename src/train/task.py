@@ -5,6 +5,7 @@ from torchvision import models, transforms
 import pandas as pd
 from PIL import Image
 import io
+from tqdm import tqdm
 
 DISEASE_LABELS = [
     'Atelectasis', 'Cardiomegaly', 'Effusion', 'Infiltration', 'Mass',
@@ -69,17 +70,27 @@ def train(model, train_loader, epochs, device):
     model.to(device)
     model.train()
 
+    print(f"DEBUG: Starting training on {device}...")
+    total_loss = 0.0
     for epoch in range(epochs):
-        for images, labels in train_loader:
+        pbar = tqdm(train_loader, desc=f"Epoch {epoch+1}/{epochs}")
+        for i, (images, labels) in enumerate(pbar):
+            if i == 0: print("DEBUG: Received first batch from Loader...")
+            
             images, labels = images.to(device), labels.to(device)
+            if i == 0: print(f"DEBUG: Moved first batch to {device}...")
+            
             optimizer.zero_grad()
             outputs = model(images)
             loss = criterion(outputs, labels)
             loss.backward()
             optimizer.step()
+            total_loss=loss.item()
+
+    return total_loss / len(train_loader)
 
 def test(model, test_loader, device):
-    criterion = nn.BCEWithLogitsLoss
+    criterion = nn.BCEWithLogitsLoss()
     model.to(device)
     model.eval()
     loss = 0.0
