@@ -3,9 +3,19 @@ import task
 import torch
 
 def eval_metrics(metrics):
-    accuracies = [num_examples * m["accuracy"] for num_examples, m in metrics]
-    examples = [num_examples for num_examples, _ in metrics]
-    return {"accuracy": sum(accuracies) / sum(examples)}
+    # metrics is a list of (num_examples, metric_dict)
+    total_examples = sum([num for num, _ in metrics])
+    
+    aggregated_metrics = {}
+    
+    # Get all metric keys from the first client (global_auc, auc_Atelectasis, etc.)
+    all_keys = metrics[0][1].keys()
+    
+    for key in all_keys:
+        weighted_sum = sum([num * m[key] for num, m in metrics])
+        aggregated_metrics[key] = weighted_sum / total_examples
+        
+    return aggregated_metrics
 
 def fit_metrics(metrics):
     # metrics is a list of tuples: (num_examples, {"train_loss": value})

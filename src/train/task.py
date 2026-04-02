@@ -1,7 +1,9 @@
 import torch
 import torch.nn as nn
+import numpy as np
 from torch.utils.data import Dataset, DataLoader
 from torchvision import models, transforms
+from sklearn.metrics import roc_auc_score
 import pandas as pd
 from PIL import Image
 import io
@@ -93,18 +95,34 @@ def test(model, test_loader, device):
     criterion = nn.BCEWithLogitsLoss()
     model.to(device)
     model.eval()
-    loss = 0.0
+
+    all_outputs = []
+    all_labels = []
+    total_loss = 0.0
 
     with torch.no_grad(): # disable weight updates. Don't need to during eval
         for images, labels in test_loader:
             images, labels = images.to(device), labels.to(device)
             outputs = model(images)
-            loss += criterion(outputs, labels).item()
+            total_loss += criterion(outputs, labels).item()
 
-            # TODO: Calculate ROC-AUC here
+            all_outputs.append(torch.sigmoid(outputs).cpu().numpy())
+            all_labels.append(labels.cpu().numpy())
 
-    loss /= len(test_loader.dataset)
-    return loss, {"accuracy": 0.0} # TODO: Placeholder for other metrics
+    avg_loss = total_loss / len(test_loader)
+
+    y_pred = np.vstack(all_outputs)
+    y_true = np.vstack(all_labels)
+
+
+    global_auc = roc_auc_score(y_true, y_pred, average='macro')
+    per_disease_auc = roc_auc_score(y_true, y_pred, average=None)
+
+    metrics = {"global_auc": global_auc}
+    for i, disease in enumerate(DISEASE_LABELS):
+        metrics[f"auc_{disease}"] = per_disease_auc[i]
+
+    return avg_loss, metrics
 
 
 
