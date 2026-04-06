@@ -1,0 +1,157 @@
+2026-04-02 15:39:30.635928: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-04-02 15:39:30.636239: I external/local_tsl/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
+2026-04-02 15:39:30.638468: I external/local_tsl/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
+2026-04-02 15:39:30.663109: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-04-02 15:39:33.206337: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+/s/chopin/k/grad/jasoncur/.local/lib/python3.9/site-packages/torchvision/transforms/_functional_pil.py:242: DeprecationWarning: BILINEAR is deprecated and will be removed in Pillow 10 (2023-07-01). Use Resampling.BILINEAR instead.
+  interpolation: int = Image.BILINEAR,
+/s/chopin/k/grad/jasoncur/.local/lib/python3.9/site-packages/torchvision/transforms/_functional_pil.py:288: DeprecationWarning: NEAREST is deprecated and will be removed in Pillow 10 (2023-07-01). Use Resampling.NEAREST or Dither.NONE instead.
+  interpolation: int = Image.NEAREST,
+/s/chopin/k/grad/jasoncur/.local/lib/python3.9/site-packages/torchvision/transforms/_functional_pil.py:321: DeprecationWarning: BICUBIC is deprecated and will be removed in Pillow 10 (2023-07-01). Use Resampling.BICUBIC instead.
+  interpolation: int = Image.BICUBIC,
+Starting Flower Server...
+[93mWARNING [0m:   DEPRECATED FEATURE: flwr.server.start_server() is deprecated.
+	Instead, use the `flower-superlink` CLI command to start a SuperLink as shown below:
+
+		$ flower-superlink --insecure
+
+	To view usage and all available options, run:
+
+		$ flower-superlink --help
+
+	Using `start_server()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+[92mINFO [0m:      Starting Flower server, config: num_rounds=5, no round_timeout
+[92mINFO [0m:      Flower ECE: gRPC server running (5 rounds), SSL is disabled
+[92mINFO [0m:      [INIT]
+[92mINFO [0m:      Requesting initial parameters from one random client
+I0402 15:39:46.908133 1012062 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+[92mINFO [0m:      Received initial parameters from one random client
+[92mINFO [0m:      Starting evaluation of initial global parameters
+[92mINFO [0m:      Evaluation returned no results (`None`)
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 1]
+[92mINFO [0m:      configure_fit: strategy sampled 3 clients (out of 3)
+[92mINFO [0m:      aggregate_fit: received 3 results and 0 failures
+[92mINFO [0m:      configure_evaluate: strategy sampled 3 clients (out of 3)
+[92mINFO [0m:      aggregate_evaluate: received 3 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 2]
+[92mINFO [0m:      configure_fit: strategy sampled 3 clients (out of 3)
+[92mINFO [0m:      aggregate_fit: received 3 results and 0 failures
+[92mINFO [0m:      configure_evaluate: strategy sampled 3 clients (out of 3)
+[92mINFO [0m:      aggregate_evaluate: received 3 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 3]
+[92mINFO [0m:      configure_fit: strategy sampled 3 clients (out of 3)
+[92mINFO [0m:      aggregate_fit: received 3 results and 0 failures
+[92mINFO [0m:      configure_evaluate: strategy sampled 3 clients (out of 3)
+[92mINFO [0m:      aggregate_evaluate: received 3 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 4]
+[92mINFO [0m:      configure_fit: strategy sampled 3 clients (out of 3)
+[92mINFO [0m:      aggregate_fit: received 3 results and 0 failures
+[92mINFO [0m:      configure_evaluate: strategy sampled 3 clients (out of 3)
+[92mINFO [0m:      aggregate_evaluate: received 3 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 5]
+[92mINFO [0m:      configure_fit: strategy sampled 3 clients (out of 3)
+[92mINFO [0m:      aggregate_fit: received 3 results and 0 failures
+[92mINFO [0m:      configure_evaluate: strategy sampled 3 clients (out of 3)
+[92mINFO [0m:      aggregate_evaluate: received 3 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [SUMMARY]
+[92mINFO [0m:      Run finished 5 round(s) in 4529.81s
+[92mINFO [0m:      	History (loss, distributed):
+[92mINFO [0m:      		round 1: 0.20481108520822278
+[92mINFO [0m:      		round 2: 0.1935837965715548
+[92mINFO [0m:      		round 3: 0.18414569549776358
+[92mINFO [0m:      		round 4: 0.224250345105498
+[92mINFO [0m:      		round 5: 0.2433789705151114
+[92mINFO [0m:      	History (metrics, distributed, fit):
+[92mINFO [0m:      	{'avg_train_loss': [(1, 0.001880082263307653),
+[92mINFO [0m:      	                    (2, 0.0021149417041030016),
+[92mINFO [0m:      	                    (3, 0.0019925235826578616),
+[92mINFO [0m:      	                    (4, 0.0017371316324788259),
+[92mINFO [0m:      	                    (5, 0.001055989016219752)]}
+[92mINFO [0m:      	History (metrics, distributed, evaluate):
+[92mINFO [0m:      	{'auc_Atelectasis': [(1, 0.5831091351266673),
+[92mINFO [0m:      	                     (2, 0.70260186637365),
+[92mINFO [0m:      	                     (3, 0.744622001702096),
+[92mINFO [0m:      	                     (4, 0.727873824930681),
+[92mINFO [0m:      	                     (5, 0.7437406386618286)],
+[92mINFO [0m:      	 'auc_Cardiomegaly': [(1, 0.5394261976697301),
+[92mINFO [0m:      	                      (2, 0.640487706775704),
+[92mINFO [0m:      	                      (3, 0.7302767256942033),
+[92mINFO [0m:      	                      (4, 0.7699188293755163),
+[92mINFO [0m:      	                      (5, 0.7748441438424862)],
+[92mINFO [0m:      	 'auc_Consolidation': [(1, 0.5442498755612284),
+[92mINFO [0m:      	                       (2, 0.7276569095916436),
+[92mINFO [0m:      	                       (3, 0.7173795852439608),
+[92mINFO [0m:      	                       (4, 0.675960423070601),
+[92mINFO [0m:      	                       (5, 0.68947742560403)],
+[92mINFO [0m:      	 'auc_Edema': [(1, 0.5432274023399024),
+[92mINFO [0m:      	               (2, 0.7778107067200636),
+[92mINFO [0m:      	               (3, 0.7910292890504436),
+[92mINFO [0m:      	               (4, 0.803380517613858),
+[92mINFO [0m:      	               (5, 0.8188413679811132)],
+[92mINFO [0m:      	 'auc_Effusion': [(1, 0.5994475324089927),
+[92mINFO [0m:      	                  (2, 0.8057284952142646),
+[92mINFO [0m:      	                  (3, 0.8431682939306862),
+[92mINFO [0m:      	                  (4, 0.8431181138207634),
+[92mINFO [0m:      	                  (5, 0.8431575689096606)],
+[92mINFO [0m:      	 'auc_Emphysema': [(1, 0.6014478956315907),
+[92mINFO [0m:      	                   (2, 0.5703088555435276),
+[92mINFO [0m:      	                   (3, 0.6173606843499416),
+[92mINFO [0m:      	                   (4, 0.6586054915343525),
+[92mINFO [0m:      	                   (5, 0.6617860155596461)],
+[92mINFO [0m:      	 'auc_Fibrosis': [(1, 0.7774012477885532),
+[92mINFO [0m:      	                  (2, 0.8110258831292823),
+[92mINFO [0m:      	                  (3, 0.8094585414147153),
+[92mINFO [0m:      	                  (4, 0.7711493298684455),
+[92mINFO [0m:      	                  (5, 0.7510016909139751)],
+[92mINFO [0m:      	 'auc_Hernia': [(1, 0.6778459605772925),
+[92mINFO [0m:      	                (2, 0.7578395807358569),
+[92mINFO [0m:      	                (3, 0.9275678040083629),
+[92mINFO [0m:      	                (4, 0.907026264225433),
+[92mINFO [0m:      	                (5, 0.9329725393566864)],
+[92mINFO [0m:      	 'auc_Infiltration': [(1, 0.46832841115763607),
+[92mINFO [0m:      	                      (2, 0.6096062831861753),
+[92mINFO [0m:      	                      (3, 0.63496946217749),
+[92mINFO [0m:      	                      (4, 0.6123644664519112),
+[92mINFO [0m:      	                      (5, 0.5748019570972879)],
+[92mINFO [0m:      	 'auc_Mass': [(1, 0.5508317224026349),
+[92mINFO [0m:      	              (2, 0.6304106369085413),
+[92mINFO [0m:      	              (3, 0.7046373210683967),
+[92mINFO [0m:      	              (4, 0.724929497182628),
+[92mINFO [0m:      	              (5, 0.7277706593062632)],
+[92mINFO [0m:      	 'auc_Nodule': [(1, 0.5474184616695195),
+[92mINFO [0m:      	                (2, 0.5770469797713563),
+[92mINFO [0m:      	                (3, 0.6239254025054922),
+[92mINFO [0m:      	                (4, 0.6474233018131164),
+[92mINFO [0m:      	                (5, 0.651138636358154)],
+[92mINFO [0m:      	 'auc_Pleural_Thickening': [(1, 0.5197114111027791),
+[92mINFO [0m:      	                            (2, 0.6154825262672744),
+[92mINFO [0m:      	                            (3, 0.673515553976313),
+[92mINFO [0m:      	                            (4, 0.685370868977058),
+[92mINFO [0m:      	                            (5, 0.6643329802118371)],
+[92mINFO [0m:      	 'auc_Pneumonia': [(1, 0.494624239823116),
+[92mINFO [0m:      	                   (2, 0.6850961157439646),
+[92mINFO [0m:      	                   (3, 0.7647828892335702),
+[92mINFO [0m:      	                   (4, 0.763646208417889),
+[92mINFO [0m:      	                   (5, 0.7283745992166646)],
+[92mINFO [0m:      	 'auc_Pneumothorax': [(1, 0.6430221040969045),
+[92mINFO [0m:      	                      (2, 0.7633552690884072),
+[92mINFO [0m:      	                      (3, 0.796630687276674),
+[92mINFO [0m:      	                      (4, 0.7742858064852985),
+[92mINFO [0m:      	                      (5, 0.7931741647950454)],
+[92mINFO [0m:      	 'global_auc': [(1, 0.5778636855254677),
+[92mINFO [0m:      	                (2, 0.6910327010749795),
+[92mINFO [0m:      	                (3, 0.741380302973739),
+[92mINFO [0m:      	                (4, 0.740360924554825),
+[92mINFO [0m:      	                (5, 0.739672456272477)]}
+[92mINFO [0m:      

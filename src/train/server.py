@@ -33,7 +33,7 @@ if __name__ == "__main__":
         min_fit_clients=2,          # Minimum number of clients required to start a training round
         min_evaluate_clients=3,     # Minimum number of clients required to start an eval round
         min_available_clients=3,    # Wait until all clients are connected
-        on_fit_config_fn=lambda server_round: {"local_epochs": 1}, # Send config to clients
+        on_fit_config_fn=lambda server_round: {"local_epochs": 5}, # Send config to clients
         evaluate_metrics_aggregation_fn=eval_metrics,
         fit_metrics_aggregation_fn=fit_metrics,
     )
@@ -41,6 +41,6 @@ if __name__ == "__main__":
     print("Starting Flower Server...")
     fl.server.start_server(
         server_address="0.0.0.0:8080",
-        config=fl.server.ServerConfig(num_rounds=1), # Run for 5 global rounds
+        config=fl.server.ServerConfig(num_rounds=5), # Run for 5 global rounds
         strategy=strategy,
     )
