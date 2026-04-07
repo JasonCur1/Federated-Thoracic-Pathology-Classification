@@ -33,3 +33,4 @@ def show_xray(image, label):
     if not class_name:
         class_name = ['No Finding']
     plt.title(class_name)
+    plt.axis('off')
