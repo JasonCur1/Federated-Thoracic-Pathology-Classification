@@ -73,8 +73,9 @@ def train(model, train_loader, epochs, device):
     model.train()
 
     print(f"DEBUG: Starting training on {device}...")
-    total_loss = 0.0
+    total_loss = []
     for epoch in range(epochs):
+        loss = 0.0
         pbar = tqdm(train_loader, desc=f"Epoch {epoch+1}/{epochs}")
         for i, (images, labels) in enumerate(pbar):
             if i == 0: print("DEBUG: Received first batch from Loader...")
@@ -87,9 +88,11 @@ def train(model, train_loader, epochs, device):
             loss = criterion(outputs, labels)
             loss.backward()
             optimizer.step()
-            total_loss=loss.item()
 
-    return total_loss / len(train_loader)
+            loss += loss.item()
+        avg_loss = loss / len(train_loader)
+        total_loss.append(avg_loss)
+    return total_loss
 
 def test(model, test_loader, device):
     criterion = nn.BCEWithLogitsLoss()
