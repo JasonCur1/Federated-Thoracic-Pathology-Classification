@@ -33,7 +33,8 @@ class Client(fl.client.NumPyClient):
 
         # Train locally from num epochs from config. Default = 1
         epochs = config.get("local_epochs", 1)
-        avg_loss = task.train(self.model, self.train_loader, epochs, self.device)
+        total_train_loss = task.train(self.model, self.train_loader, epochs, self.device) # pass a list of loss values now to use in future plotting functions
+        avg_loss = sum(total_train_loss) / len(total_train_loss)
 
         return self.get_parameters(config={}), len(self.train_loader.dataset), {"train_loss": avg_loss}
         
