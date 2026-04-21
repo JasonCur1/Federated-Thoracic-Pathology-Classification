@@ -35,16 +35,16 @@ trap cleanup EXIT INT TERM
 
 # Start server
 echo "Starting server on little-rock..."
-ssh little-rock "cd $PWD && python -u src/train/server.py" > server.log 2>&1 &
+ssh little-rock "cd $PWD && python -u src/train/server.py" > src/train/server.log 2>&1 &
 PIDS+=($!)
 
 # Give the server a moment to bind before clients connect
 sleep 5
 
 declare -A CLIENT_MAP=(
-    [warhol]="hospital_a"
-    [raphael]="hospital_b"
-    [lincoln]="hospital_c"
+    [perch]="hospital_a"
+    [blowfish]="hospital_b"
+    [wahoo]="hospital_c"
 )
 
 # Start 3 clients, one per hospital
@@ -52,7 +52,7 @@ for machine in "${!CLIENT_MAP[@]}"; do
     hospital="${CLIENT_MAP[$machine]}"
     echo "Starting client on $machine ($hospital)..."
     # Added output redirection for easier debugging
-    ssh "$machine" "cd $PWD && python -u src/train/client.py --data-path \"data/$hospital\"" > "client_$machine.log" 2>&1 &
+    ssh "$machine" "cd $PWD && GRPC_ENABLE_FORK_SUPPORT=1 GRPC_POLL_STRATEGY=epoll1 python -u src/train/client.py --data-path \"data/$hospital\"" > "src/train/client_$machine.log" 2>&1 &
     PIDS+=($!)
 done
 
