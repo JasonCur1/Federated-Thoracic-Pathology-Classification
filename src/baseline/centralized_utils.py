@@ -19,19 +19,6 @@ import glob
 import os
 
 
-class DenseNet121(torch.nn.Module):
-    """
-    DenseNet121 model with `n_classes` outputs.
-    """
-    def __init__(self, n_classes, device='cpu'):
-        super().__init__()
-        self.device = device
-        self.densenet121 = models.densenet121(weights=models.DenseNet121_Weights.DEFAULT)
-        self.densenet121.classifier = torch.nn.Linear(self.densenet121.classifier.in_features, n_classes)
-        self.to(self.device)
-    def forward(self, X):
-        return self.densenet121(X)
-
 def calculate_pos_weights(y):
     """
     Calculate positive weights for imbalanced multi-label classification.
@@ -82,12 +69,13 @@ def show_xray(image, label):
     plt.title(class_name)
     plt.axis('off')
 
-def plot_loss(loss_train):
+def plot_loss(loss_train, loss_val):
     """
-    Plot loss curve of train set.
+    Plot loss curve of train and validation set.
     """
     plt.figure(figsize=(5,3))
     plt.plot(range(1, len(loss_train)+1), loss_train, label='Training Loss')
+    plt.plot(range(1, len(loss_val)+1), loss_val, label='Validation Loss')
     plt.xlabel('Epoch')
     plt.ylabel('Loss')
     plt.legend(loc='best')
