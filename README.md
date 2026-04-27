@@ -1,17 +1,19 @@
 # Federated-Thoracic-Pathology-Classification
 
+# Notes
+- venv packages can be tricky. More recent versions of numpy experience lots of deprecated functionality due to switching from C to C++.
+    - May have to downgrade numpy for torch compatibility
 
-## How to run:
-Terminal 1 (Server):
-    - python server.py
+# Baseline Instructions
+python src/baseline/train.py
 
-Terminal 2 (Hospital A)
-    - python client.py --data-path "../../data/hospital_a"
+# Federated Instructions
+- Launch_server.sh can be ran anywhere.
+- The server_address passed to launch_clients.sh must match the machine running the server node.
+- See code for configurable parameters
 
-Terminal 3 (Hospital B)
-    - python client.py --data-path "../../data/hospital_b"
+## Terminal 1:
+bash scripts/launch_server.sh --num_rounds 30 --port 8084
 
-Terminal 4 (Hospital C)
-    - python client.py --data-path "../../data/hospital_c"
-
-TODO: Make a script to automate this. Each hospital could have its own cluster, which would use Pytorch DDP.
+## Terminal 2:
+bash scripts/launch_clients.sh --server_address boston:8084 --local_epochs 1

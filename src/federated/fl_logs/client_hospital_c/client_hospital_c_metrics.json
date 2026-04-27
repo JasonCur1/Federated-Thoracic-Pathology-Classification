@@ -1,0 +1,782 @@
+[
+  {
+    "round_num": 1,
+    "wall_time_s": 0.0001094285398721695,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 69.06455932185054,
+    "total_upload_mb": 30.287168,
+    "total_download_mb": 30.287168,
+    "auroc_macro": NaN,
+    "f1_macro": NaN,
+    "recall_macro": NaN,
+    "precision_macro": NaN,
+    "val_loss": NaN,
+    "mia_vulnerability": NaN,
+    "bandwidth_efficiency": NaN,
+    "client_stats": [
+      {
+        "client_id": "hospital_c",
+        "round_num": 1,
+        "compute_time_s": 69.06455932185054,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.11781412269268836,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 2,
+    "wall_time_s": 0.00010222196578979492,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 68.59888902679086,
+    "total_upload_mb": 30.287168,
+    "total_download_mb": 30.287168,
+    "auroc_macro": NaN,
+    "f1_macro": NaN,
+    "recall_macro": NaN,
+    "precision_macro": NaN,
+    "val_loss": NaN,
+    "mia_vulnerability": NaN,
+    "bandwidth_efficiency": NaN,
+    "client_stats": [
+      {
+        "client_id": "hospital_c",
+        "round_num": 2,
+        "compute_time_s": 68.59888902679086,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.10259097903133273,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 3,
+    "wall_time_s": 9.652785956859589e-05,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 68.59361343458295,
+    "total_upload_mb": 30.287168,
+    "total_download_mb": 30.287168,
+    "auroc_macro": NaN,
+    "f1_macro": NaN,
+    "recall_macro": NaN,
+    "precision_macro": NaN,
+    "val_loss": NaN,
+    "mia_vulnerability": NaN,
+    "bandwidth_efficiency": NaN,
+    "client_stats": [
+      {
+        "client_id": "hospital_c",
+        "round_num": 3,
+        "compute_time_s": 68.59361343458295,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.10023472208034742,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 4,
+    "wall_time_s": 0.0001092720776796341,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 68.99493282288313,
+    "total_upload_mb": 30.287168,
+    "total_download_mb": 30.287168,
+    "auroc_macro": NaN,
+    "f1_macro": NaN,
+    "recall_macro": NaN,
+    "precision_macro": NaN,
+    "val_loss": NaN,
+    "mia_vulnerability": NaN,
+    "bandwidth_efficiency": NaN,
+    "client_stats": [
+      {
+        "client_id": "hospital_c",
+        "round_num": 4,
+        "compute_time_s": 68.99493282288313,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.09727285984721216,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 5,
+    "wall_time_s": 0.00011160038411617279,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 68.88510865345597,
+    "total_upload_mb": 30.287168,
+    "total_download_mb": 30.287168,
+    "auroc_macro": NaN,
+    "f1_macro": NaN,
+    "recall_macro": NaN,
+    "precision_macro": NaN,
+    "val_loss": NaN,
+    "mia_vulnerability": NaN,
+    "bandwidth_efficiency": NaN,
+    "client_stats": [
+      {
+        "client_id": "hospital_c",
+        "round_num": 5,
+        "compute_time_s": 68.88510865345597,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.09516997695281788,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 6,
+    "wall_time_s": 9.85022634267807e-05,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 68.6324473042041,
+    "total_upload_mb": 30.287168,
+    "total_download_mb": 30.287168,
+    "auroc_macro": NaN,
+    "f1_macro": NaN,
+    "recall_macro": NaN,
+    "precision_macro": NaN,
+    "val_loss": NaN,
+    "mia_vulnerability": NaN,
+    "bandwidth_efficiency": NaN,
+    "client_stats": [
+      {
+        "client_id": "hospital_c",
+        "round_num": 6,
+        "compute_time_s": 68.6324473042041,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.09429839696292278,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 7,
+    "wall_time_s": 9.759888052940369e-05,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 69.02897812984884,
+    "total_upload_mb": 30.287168,
+    "total_download_mb": 30.287168,
+    "auroc_macro": NaN,
+    "f1_macro": NaN,
+    "recall_macro": NaN,
+    "precision_macro": NaN,
+    "val_loss": NaN,
+    "mia_vulnerability": NaN,
+    "bandwidth_efficiency": NaN,
+    "client_stats": [
+      {
+        "client_id": "hospital_c",
+        "round_num": 7,
+        "compute_time_s": 69.02897812984884,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.09280954723383163,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 8,
+    "wall_time_s": 9.935908019542694e-05,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 69.00369349494576,
+    "total_upload_mb": 30.287168,
+    "total_download_mb": 30.287168,
+    "auroc_macro": NaN,
+    "f1_macro": NaN,
+    "recall_macro": NaN,
+    "precision_macro": NaN,
+    "val_loss": NaN,
+    "mia_vulnerability": NaN,
+    "bandwidth_efficiency": NaN,
+    "client_stats": [
+      {
+        "client_id": "hospital_c",
+        "round_num": 8,
+        "compute_time_s": 69.00369349494576,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.09220719457297892,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 9,
+    "wall_time_s": 9.633973240852356e-05,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 68.99978442490101,
+    "total_upload_mb": 30.287168,
+    "total_download_mb": 30.287168,
+    "auroc_macro": NaN,
+    "f1_macro": NaN,
+    "recall_macro": NaN,
+    "precision_macro": NaN,
+    "val_loss": NaN,
+    "mia_vulnerability": NaN,
+    "bandwidth_efficiency": NaN,
+    "client_stats": [
+      {
+        "client_id": "hospital_c",
+        "round_num": 9,
+        "compute_time_s": 68.99978442490101,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.0917635660071473,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 10,
+    "wall_time_s": 0.00010250136256217957,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 68.66256910935044,
+    "total_upload_mb": 30.287168,
+    "total_download_mb": 30.287168,
+    "auroc_macro": NaN,
+    "f1_macro": NaN,
+    "recall_macro": NaN,
+    "precision_macro": NaN,
+    "val_loss": NaN,
+    "mia_vulnerability": NaN,
+    "bandwidth_efficiency": NaN,
+    "client_stats": [
+      {
+        "client_id": "hospital_c",
+        "round_num": 10,
+        "compute_time_s": 68.66256910935044,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.09089896192292234,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 11,
+    "wall_time_s": 9.633786976337433e-05,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 68.62584953010082,
+    "total_upload_mb": 30.287168,
+    "total_download_mb": 30.287168,
+    "auroc_macro": NaN,
+    "f1_macro": NaN,
+    "recall_macro": NaN,
+    "precision_macro": NaN,
+    "val_loss": NaN,
+    "mia_vulnerability": NaN,
+    "bandwidth_efficiency": NaN,
+    "client_stats": [
+      {
+        "client_id": "hospital_c",
+        "round_num": 11,
+        "compute_time_s": 68.62584953010082,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08993654479305227,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 12,
+    "wall_time_s": 0.00010261498391628265,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 69.07032941095531,
+    "total_upload_mb": 30.287168,
+    "total_download_mb": 30.287168,
+    "auroc_macro": NaN,
+    "f1_macro": NaN,
+    "recall_macro": NaN,
+    "precision_macro": NaN,
+    "val_loss": NaN,
+    "mia_vulnerability": NaN,
+    "bandwidth_efficiency": NaN,
+    "client_stats": [
+      {
+        "client_id": "hospital_c",
+        "round_num": 12,
+        "compute_time_s": 69.07032941095531,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08987023902835546,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 13,
+    "wall_time_s": 0.00010231323540210724,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 69.05142047442496,
+    "total_upload_mb": 30.287168,
+    "total_download_mb": 30.287168,
+    "auroc_macro": NaN,
+    "f1_macro": NaN,
+    "recall_macro": NaN,
+    "precision_macro": NaN,
+    "val_loss": NaN,
+    "mia_vulnerability": NaN,
+    "bandwidth_efficiency": NaN,
+    "client_stats": [
+      {
+        "client_id": "hospital_c",
+        "round_num": 13,
+        "compute_time_s": 69.05142047442496,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08930290120464938,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 14,
+    "wall_time_s": 9.590201079845428e-05,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 68.64859189093113,
+    "total_upload_mb": 30.287168,
+    "total_download_mb": 30.287168,
+    "auroc_macro": NaN,
+    "f1_macro": NaN,
+    "recall_macro": NaN,
+    "precision_macro": NaN,
+    "val_loss": NaN,
+    "mia_vulnerability": NaN,
+    "bandwidth_efficiency": NaN,
+    "client_stats": [
+      {
+        "client_id": "hospital_c",
+        "round_num": 14,
+        "compute_time_s": 68.64859189093113,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08812396327307175,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 15,
+    "wall_time_s": 9.975768625736237e-05,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 68.7317432705313,
+    "total_upload_mb": 30.287168,
+    "total_download_mb": 30.287168,
+    "auroc_macro": NaN,
+    "f1_macro": NaN,
+    "recall_macro": NaN,
+    "precision_macro": NaN,
+    "val_loss": NaN,
+    "mia_vulnerability": NaN,
+    "bandwidth_efficiency": NaN,
+    "client_stats": [
+      {
+        "client_id": "hospital_c",
+        "round_num": 15,
+        "compute_time_s": 68.7317432705313,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08780576075082058,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 16,
+    "wall_time_s": 0.0001067332923412323,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 68.66269919462502,
+    "total_upload_mb": 30.287168,
+    "total_download_mb": 30.287168,
+    "auroc_macro": NaN,
+    "f1_macro": NaN,
+    "recall_macro": NaN,
+    "precision_macro": NaN,
+    "val_loss": NaN,
+    "mia_vulnerability": NaN,
+    "bandwidth_efficiency": NaN,
+    "client_stats": [
+      {
+        "client_id": "hospital_c",
+        "round_num": 16,
+        "compute_time_s": 68.66269919462502,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08782714923153391,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 17,
+    "wall_time_s": 9.449198842048645e-05,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 69.09121849574149,
+    "total_upload_mb": 30.287168,
+    "total_download_mb": 30.287168,
+    "auroc_macro": NaN,
+    "f1_macro": NaN,
+    "recall_macro": NaN,
+    "precision_macro": NaN,
+    "val_loss": NaN,
+    "mia_vulnerability": NaN,
+    "bandwidth_efficiency": NaN,
+    "client_stats": [
+      {
+        "client_id": "hospital_c",
+        "round_num": 17,
+        "compute_time_s": 69.09121849574149,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.0866363736299368,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 18,
+    "wall_time_s": 9.954161942005157e-05,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 68.72163955122232,
+    "total_upload_mb": 30.287168,
+    "total_download_mb": 30.287168,
+    "auroc_macro": NaN,
+    "f1_macro": NaN,
+    "recall_macro": NaN,
+    "precision_macro": NaN,
+    "val_loss": NaN,
+    "mia_vulnerability": NaN,
+    "bandwidth_efficiency": NaN,
+    "client_stats": [
+      {
+        "client_id": "hospital_c",
+        "round_num": 18,
+        "compute_time_s": 68.72163955122232,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08636373880651448,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 19,
+    "wall_time_s": 0.00010563991963863373,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 68.55202924646437,
+    "total_upload_mb": 30.287168,
+    "total_download_mb": 30.287168,
+    "auroc_macro": NaN,
+    "f1_macro": NaN,
+    "recall_macro": NaN,
+    "precision_macro": NaN,
+    "val_loss": NaN,
+    "mia_vulnerability": NaN,
+    "bandwidth_efficiency": NaN,
+    "client_stats": [
+      {
+        "client_id": "hospital_c",
+        "round_num": 19,
+        "compute_time_s": 68.55202924646437,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08586851788775904,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 20,
+    "wall_time_s": 9.747035801410675e-05,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 68.51300276443362,
+    "total_upload_mb": 30.287168,
+    "total_download_mb": 30.287168,
+    "auroc_macro": NaN,
+    "f1_macro": NaN,
+    "recall_macro": NaN,
+    "precision_macro": NaN,
+    "val_loss": NaN,
+    "mia_vulnerability": NaN,
+    "bandwidth_efficiency": NaN,
+    "client_stats": [
+      {
+        "client_id": "hospital_c",
+        "round_num": 20,
+        "compute_time_s": 68.51300276443362,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08451465532913074,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 21,
+    "wall_time_s": 0.00010419078171253204,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 68.73326700739563,
+    "total_upload_mb": 30.287168,
+    "total_download_mb": 30.287168,
+    "auroc_macro": NaN,
+    "f1_macro": NaN,
+    "recall_macro": NaN,
+    "precision_macro": NaN,
+    "val_loss": NaN,
+    "mia_vulnerability": NaN,
+    "bandwidth_efficiency": NaN,
+    "client_stats": [
+      {
+        "client_id": "hospital_c",
+        "round_num": 21,
+        "compute_time_s": 68.73326700739563,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08403947647218105,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 22,
+    "wall_time_s": 0.00010086409747600555,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 69.0079669188708,
+    "total_upload_mb": 30.287168,
+    "total_download_mb": 30.287168,
+    "auroc_macro": NaN,
+    "f1_macro": NaN,
+    "recall_macro": NaN,
+    "precision_macro": NaN,
+    "val_loss": NaN,
+    "mia_vulnerability": NaN,
+    "bandwidth_efficiency": NaN,
+    "client_stats": [
+      {
+        "client_id": "hospital_c",
+        "round_num": 22,
+        "compute_time_s": 69.0079669188708,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08340511155816224,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 23,
+    "wall_time_s": 9.969435632228851e-05,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 68.89322388730943,
+    "total_upload_mb": 30.287168,
+    "total_download_mb": 30.287168,
+    "auroc_macro": NaN,
+    "f1_macro": NaN,
+    "recall_macro": NaN,
+    "precision_macro": NaN,
+    "val_loss": NaN,
+    "mia_vulnerability": NaN,
+    "bandwidth_efficiency": NaN,
+    "client_stats": [
+      {
+        "client_id": "hospital_c",
+        "round_num": 23,
+        "compute_time_s": 68.89322388730943,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08244176625788628,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 24,
+    "wall_time_s": 0.00010610558092594147,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 68.61674423888326,
+    "total_upload_mb": 30.287168,
+    "total_download_mb": 30.287168,
+    "auroc_macro": NaN,
+    "f1_macro": NaN,
+    "recall_macro": NaN,
+    "precision_macro": NaN,
+    "val_loss": NaN,
+    "mia_vulnerability": NaN,
+    "bandwidth_efficiency": NaN,
+    "client_stats": [
+      {
+        "client_id": "hospital_c",
+        "round_num": 24,
+        "compute_time_s": 68.61674423888326,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08212029037775694,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 25,
+    "wall_time_s": 0.00010100379586219788,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 68.86197671294212,
+    "total_upload_mb": 30.287168,
+    "total_download_mb": 30.287168,
+    "auroc_macro": NaN,
+    "f1_macro": NaN,
+    "recall_macro": NaN,
+    "precision_macro": NaN,
+    "val_loss": NaN,
+    "mia_vulnerability": NaN,
+    "bandwidth_efficiency": NaN,
+    "client_stats": [
+      {
+        "client_id": "hospital_c",
+        "round_num": 25,
+        "compute_time_s": 68.86197671294212,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08095260402122578,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 26,
+    "wall_time_s": 0.00010308623313903809,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 68.5131731852889,
+    "total_upload_mb": 30.287168,
+    "total_download_mb": 30.287168,
+    "auroc_macro": NaN,
+    "f1_macro": NaN,
+    "recall_macro": NaN,
+    "precision_macro": NaN,
+    "val_loss": NaN,
+    "mia_vulnerability": NaN,
+    "bandwidth_efficiency": NaN,
+    "client_stats": [
+      {
+        "client_id": "hospital_c",
+        "round_num": 26,
+        "compute_time_s": 68.5131731852889,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08002625851260199,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 27,
+    "wall_time_s": 0.00010837800800800323,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 68.83968084864318,
+    "total_upload_mb": 30.287168,
+    "total_download_mb": 30.287168,
+    "auroc_macro": NaN,
+    "f1_macro": NaN,
+    "recall_macro": NaN,
+    "precision_macro": NaN,
+    "val_loss": NaN,
+    "mia_vulnerability": NaN,
+    "bandwidth_efficiency": NaN,
+    "client_stats": [
+      {
+        "client_id": "hospital_c",
+        "round_num": 27,
+        "compute_time_s": 68.83968084864318,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.07948401922008375,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 28,
+    "wall_time_s": 0.00010165944695472717,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 68.56951950117946,
+    "total_upload_mb": 30.287168,
+    "total_download_mb": 30.287168,
+    "auroc_macro": NaN,
+    "f1_macro": NaN,
+    "recall_macro": NaN,
+    "precision_macro": NaN,
+    "val_loss": NaN,
+    "mia_vulnerability": NaN,
+    "bandwidth_efficiency": NaN,
+    "client_stats": [
+      {
+        "client_id": "hospital_c",
+        "round_num": 28,
+        "compute_time_s": 68.56951950117946,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.07924659643973504,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 29,
+    "wall_time_s": 0.00010394491255283356,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 69.00676367245615,
+    "total_upload_mb": 30.287168,
+    "total_download_mb": 30.287168,
+    "auroc_macro": NaN,
+    "f1_macro": NaN,
+    "recall_macro": NaN,
+    "precision_macro": NaN,
+    "val_loss": NaN,
+    "mia_vulnerability": NaN,
+    "bandwidth_efficiency": NaN,
+    "client_stats": [
+      {
+        "client_id": "hospital_c",
+        "round_num": 29,
+        "compute_time_s": 69.00676367245615,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.07792979814893716,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 30,
+    "wall_time_s": 0.00010669231414794922,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 68.98267593979836,
+    "total_upload_mb": 30.287168,
+    "total_download_mb": 30.287168,
+    "auroc_macro": NaN,
+    "f1_macro": NaN,
+    "recall_macro": NaN,
+    "precision_macro": NaN,
+    "val_loss": NaN,
+    "mia_vulnerability": NaN,
+    "bandwidth_efficiency": NaN,
+    "client_stats": [
+      {
+        "client_id": "hospital_c",
+        "round_num": 30,
+        "compute_time_s": 68.98267593979836,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.07726623368013155,
+        "num_examples": 4583
+      }
+    ]
+  }
+]

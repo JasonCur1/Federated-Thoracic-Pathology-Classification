@@ -1,0 +1,1322 @@
+[
+  {
+    "round_num": 1,
+    "wall_time_s": 79.28878573561087,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 108.55239593610168,
+    "total_upload_mb": 90.861504,
+    "total_download_mb": 90.861504,
+    "auroc_macro": 0.6892976298770933,
+    "f1_macro": 0.08162032121903876,
+    "recall_macro": 0.07400805763282207,
+    "precision_macro": 0.14940783151464285,
+    "val_loss": 0.09144408316670166,
+    "mia_vulnerability": 0.57421875,
+    "bandwidth_efficiency": 0.003793122497053831,
+    "client_stats": [
+      {
+        "client_id": "966136.0",
+        "round_num": 1,
+        "compute_time_s": 71.0328815728426,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.10109357834372619,
+        "num_examples": 4689
+      },
+      {
+        "client_id": "472781.0",
+        "round_num": 1,
+        "compute_time_s": 69.06455932185054,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.11781412269268836,
+        "num_examples": 4583
+      },
+      {
+        "client_id": "181010.0",
+        "round_num": 1,
+        "compute_time_s": 108.55239593610168,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.10988901063542941,
+        "num_examples": 9286
+      }
+    ]
+  },
+  {
+    "round_num": 2,
+    "wall_time_s": 79.2855508220382,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 108.85028904117644,
+    "total_upload_mb": 90.861504,
+    "total_download_mb": 90.861504,
+    "auroc_macro": 0.7355145539183782,
+    "f1_macro": 0.12768041025968938,
+    "recall_macro": 0.13556523233007822,
+    "precision_macro": 0.15911660625848895,
+    "val_loss": 0.0896501561043018,
+    "mia_vulnerability": 0.59375,
+    "bandwidth_efficiency": 0.0002543262108080715,
+    "client_stats": [
+      {
+        "client_id": "181010.0",
+        "round_num": 2,
+        "compute_time_s": 108.85028904117644,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.10013915112820165,
+        "num_examples": 9286
+      },
+      {
+        "client_id": "472781.0",
+        "round_num": 2,
+        "compute_time_s": 68.59888902679086,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.10259097903133273,
+        "num_examples": 4583
+      },
+      {
+        "client_id": "966136.0",
+        "round_num": 2,
+        "compute_time_s": 70.07110101915896,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08474651854230117,
+        "num_examples": 4689
+      }
+    ]
+  },
+  {
+    "round_num": 3,
+    "wall_time_s": 78.34748480468988,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 108.72023332398385,
+    "total_upload_mb": 90.861504,
+    "total_download_mb": 90.861504,
+    "auroc_macro": 0.7579755018918942,
+    "f1_macro": 0.15045076289882367,
+    "recall_macro": 0.15800271341329006,
+    "precision_macro": 0.25485558841188327,
+    "val_loss": 0.08758604103184149,
+    "mia_vulnerability": 0.59375,
+    "bandwidth_efficiency": 0.00012359991297038214,
+    "client_stats": [
+      {
+        "client_id": "181010.0",
+        "round_num": 3,
+        "compute_time_s": 108.72023332398385,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.09730869851492602,
+        "num_examples": 9286
+      },
+      {
+        "client_id": "966136.0",
+        "round_num": 3,
+        "compute_time_s": 70.08186775445938,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08165495179287374,
+        "num_examples": 4689
+      },
+      {
+        "client_id": "472781.0",
+        "round_num": 3,
+        "compute_time_s": 68.59361343458295,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.10023472208034742,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 4,
+    "wall_time_s": 79.64155132509768,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 108.69148532673717,
+    "total_upload_mb": 90.861504,
+    "total_download_mb": 90.861504,
+    "auroc_macro": 0.7697097514369728,
+    "f1_macro": 0.2031618064787293,
+    "recall_macro": 0.19228148557406805,
+    "precision_macro": 0.32123785479815536,
+    "val_loss": 0.08627245829960045,
+    "mia_vulnerability": 0.58203125,
+    "bandwidth_efficiency": 6.457217318942147e-05,
+    "client_stats": [
+      {
+        "client_id": "472781.0",
+        "round_num": 4,
+        "compute_time_s": 68.99493282288313,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.09727285984721216,
+        "num_examples": 4583
+      },
+      {
+        "client_id": "966136.0",
+        "round_num": 4,
+        "compute_time_s": 69.96117585338652,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08028280900867835,
+        "num_examples": 4689
+      },
+      {
+        "client_id": "181010.0",
+        "round_num": 4,
+        "compute_time_s": 108.69148532673717,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.09524252915690685,
+        "num_examples": 9286
+      }
+    ]
+  },
+  {
+    "round_num": 5,
+    "wall_time_s": 79.89931033784524,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 109.03070332016796,
+    "total_upload_mb": 90.861504,
+    "total_download_mb": 90.861504,
+    "auroc_macro": 0.7834315950124932,
+    "f1_macro": 0.23729448084138396,
+    "recall_macro": 0.24546305878699395,
+    "precision_macro": 0.28810401747069686,
+    "val_loss": 0.08525145848162516,
+    "mia_vulnerability": 0.58984375,
+    "bandwidth_efficiency": 7.550966565290572e-05,
+    "client_stats": [
+      {
+        "client_id": "472781.0",
+        "round_num": 5,
+        "compute_time_s": 68.88510865345597,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.09516997695281788,
+        "num_examples": 4583
+      },
+      {
+        "client_id": "966136.0",
+        "round_num": 5,
+        "compute_time_s": 70.0743533745408,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.07853538303138459,
+        "num_examples": 4689
+      },
+      {
+        "client_id": "181010.0",
+        "round_num": 5,
+        "compute_time_s": 109.03070332016796,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.09358953448205158,
+        "num_examples": 9286
+      }
+    ]
+  },
+  {
+    "round_num": 6,
+    "wall_time_s": 79.56414548493922,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 109.30782912205905,
+    "total_upload_mb": 90.861504,
+    "total_download_mb": 90.861504,
+    "auroc_macro": 0.7874406932316095,
+    "f1_macro": 0.22783395101102288,
+    "recall_macro": 0.21701345478112882,
+    "precision_macro": 0.284697337020816,
+    "val_loss": 0.08455702576675307,
+    "mia_vulnerability": 0.576171875,
+    "bandwidth_efficiency": 2.206158847599708e-05,
+    "client_stats": [
+      {
+        "client_id": "181010.0",
+        "round_num": 6,
+        "compute_time_s": 109.30782912205905,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.09221370260006395,
+        "num_examples": 9286
+      },
+      {
+        "client_id": "966136.0",
+        "round_num": 6,
+        "compute_time_s": 70.1336518516764,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.07791556502143814,
+        "num_examples": 4689
+      },
+      {
+        "client_id": "472781.0",
+        "round_num": 6,
+        "compute_time_s": 68.6324473042041,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.09429839696292278,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 7,
+    "wall_time_s": 80.83857388328761,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 109.26206475775689,
+    "total_upload_mb": 90.861504,
+    "total_download_mb": 90.861504,
+    "auroc_macro": 0.7994385463110222,
+    "f1_macro": 0.25106798989305906,
+    "recall_macro": 0.24144292112614055,
+    "precision_macro": 0.31515520031186073,
+    "val_loss": 0.08414774319478215,
+    "mia_vulnerability": 0.58203125,
+    "bandwidth_efficiency": 6.602275194241063e-05,
+    "client_stats": [
+      {
+        "client_id": "181010.0",
+        "round_num": 7,
+        "compute_time_s": 109.26206475775689,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.09104806842475102,
+        "num_examples": 9286
+      },
+      {
+        "client_id": "472781.0",
+        "round_num": 7,
+        "compute_time_s": 69.02897812984884,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.09280954723383163,
+        "num_examples": 4583
+      },
+      {
+        "client_id": "966136.0",
+        "round_num": 7,
+        "compute_time_s": 70.06095577124506,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.07675167885034868,
+        "num_examples": 4689
+      }
+    ]
+  },
+  {
+    "round_num": 8,
+    "wall_time_s": 79.76755310222507,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 108.89041635487229,
+    "total_upload_mb": 90.861504,
+    "total_download_mb": 90.861504,
+    "auroc_macro": 0.8025581614494084,
+    "f1_macro": 0.2646435057625452,
+    "recall_macro": 0.2582571292310099,
+    "precision_macro": 0.31792251684816714,
+    "val_loss": 0.0835491749711009,
+    "mia_vulnerability": 0.576171875,
+    "bandwidth_efficiency": 1.7166869361892863e-05,
+    "client_stats": [
+      {
+        "client_id": "181010.0",
+        "round_num": 8,
+        "compute_time_s": 108.89041635487229,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.09046360610117173,
+        "num_examples": 9286
+      },
+      {
+        "client_id": "966136.0",
+        "round_num": 8,
+        "compute_time_s": 70.10321433935314,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.07628198702857919,
+        "num_examples": 4689
+      },
+      {
+        "client_id": "472781.0",
+        "round_num": 8,
+        "compute_time_s": 69.00369349494576,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.09220719457297892,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 9,
+    "wall_time_s": 79.78269137721509,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 109.40982382930815,
+    "total_upload_mb": 90.861504,
+    "total_download_mb": 90.861504,
+    "auroc_macro": 0.8030583894600396,
+    "f1_macro": 0.2833264749094492,
+    "recall_macro": 0.2702585049404338,
+    "precision_macro": 0.3899186238788851,
+    "val_loss": 0.0835551195970515,
+    "mia_vulnerability": 0.580078125,
+    "bandwidth_efficiency": 2.7526949731715295e-06,
+    "client_stats": [
+      {
+        "client_id": "472781.0",
+        "round_num": 9,
+        "compute_time_s": 68.99978442490101,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.0917635660071473,
+        "num_examples": 4583
+      },
+      {
+        "client_id": "966136.0",
+        "round_num": 9,
+        "compute_time_s": 70.1560521852225,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.07541488016611092,
+        "num_examples": 4689
+      },
+      {
+        "client_id": "181010.0",
+        "round_num": 9,
+        "compute_time_s": 109.40982382930815,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08894987315710248,
+        "num_examples": 9286
+      }
+    ]
+  },
+  {
+    "round_num": 10,
+    "wall_time_s": 78.72750780591741,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 108.91800166014582,
+    "total_upload_mb": 90.861504,
+    "total_download_mb": 90.861504,
+    "auroc_macro": 0.8076435977966717,
+    "f1_macro": 0.2824358536317278,
+    "recall_macro": 0.27843376707197615,
+    "precision_macro": 0.3732787917731934,
+    "val_loss": 0.08336992859176667,
+    "mia_vulnerability": 0.578125,
+    "bandwidth_efficiency": 2.5231853616643407e-05,
+    "client_stats": [
+      {
+        "client_id": "181010.0",
+        "round_num": 10,
+        "compute_time_s": 108.91800166014582,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.0883879459752091,
+        "num_examples": 9286
+      },
+      {
+        "client_id": "472781.0",
+        "round_num": 10,
+        "compute_time_s": 68.66256910935044,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.09089896192292234,
+        "num_examples": 4583
+      },
+      {
+        "client_id": "966136.0",
+        "round_num": 10,
+        "compute_time_s": 70.15924150403589,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.07464648436193597,
+        "num_examples": 4689
+      }
+    ]
+  },
+  {
+    "round_num": 11,
+    "wall_time_s": 78.73226207587868,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 109.02448276244104,
+    "total_upload_mb": 90.861504,
+    "total_download_mb": 90.861504,
+    "auroc_macro": 0.8095584922456573,
+    "f1_macro": 0.27955197384454544,
+    "recall_macro": 0.2671229922259016,
+    "precision_macro": 0.3885488515750675,
+    "val_loss": 0.0833314031114017,
+    "mia_vulnerability": 0.568359375,
+    "bandwidth_efficiency": 1.0537435353181183e-05,
+    "client_stats": [
+      {
+        "client_id": "966136.0",
+        "round_num": 11,
+        "compute_time_s": 70.16952074877918,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.07445586653911088,
+        "num_examples": 4689
+      },
+      {
+        "client_id": "181010.0",
+        "round_num": 11,
+        "compute_time_s": 109.02448276244104,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.0867249196844882,
+        "num_examples": 9286
+      },
+      {
+        "client_id": "472781.0",
+        "round_num": 11,
+        "compute_time_s": 68.62584953010082,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08993654479305227,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 12,
+    "wall_time_s": 77.2767926431261,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 108.71290442533791,
+    "total_upload_mb": 90.861504,
+    "total_download_mb": 90.861504,
+    "auroc_macro": 0.8138435579622852,
+    "f1_macro": 0.30162703384850836,
+    "recall_macro": 0.2905013995997087,
+    "precision_macro": 0.39494103704222844,
+    "val_loss": 0.082535411036726,
+    "mia_vulnerability": 0.568359375,
+    "bandwidth_efficiency": 2.3580204641054043e-05,
+    "client_stats": [
+      {
+        "client_id": "181010.0",
+        "round_num": 12,
+        "compute_time_s": 108.71290442533791,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08560066952787597,
+        "num_examples": 9286
+      },
+      {
+        "client_id": "966136.0",
+        "round_num": 12,
+        "compute_time_s": 70.46620181482285,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.07332546914583199,
+        "num_examples": 4689
+      },
+      {
+        "client_id": "472781.0",
+        "round_num": 12,
+        "compute_time_s": 69.07032941095531,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08987023902835546,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 13,
+    "wall_time_s": 77.03927841689438,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 109.05556689482182,
+    "total_upload_mb": 90.861504,
+    "total_download_mb": 90.861504,
+    "auroc_macro": 0.813268800366758,
+    "f1_macro": 0.30818810064089003,
+    "recall_macro": 0.2992806125745035,
+    "precision_macro": 0.3952539171208803,
+    "val_loss": 0.08277445367815806,
+    "mia_vulnerability": 0.56640625,
+    "bandwidth_efficiency": -3.162822373748488e-06,
+    "client_stats": [
+      {
+        "client_id": "472781.0",
+        "round_num": 13,
+        "compute_time_s": 69.05142047442496,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08930290120464938,
+        "num_examples": 4583
+      },
+      {
+        "client_id": "181010.0",
+        "round_num": 13,
+        "compute_time_s": 109.05556689482182,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08486560240131,
+        "num_examples": 9286
+      },
+      {
+        "client_id": "966136.0",
+        "round_num": 13,
+        "compute_time_s": 70.16909976210445,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.07257277061780022,
+        "num_examples": 4689
+      }
+    ]
+  },
+  {
+    "round_num": 14,
+    "wall_time_s": 81.53510179789737,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 108.89514162857085,
+    "total_upload_mb": 90.861504,
+    "total_download_mb": 90.861504,
+    "auroc_macro": 0.8130474522552519,
+    "f1_macro": 0.30045222837521,
+    "recall_macro": 0.2857751561475795,
+    "precision_macro": 0.4013374364438999,
+    "val_loss": 0.08295910895057935,
+    "mia_vulnerability": 0.57421875,
+    "bandwidth_efficiency": -1.2180522100211562e-06,
+    "client_stats": [
+      {
+        "client_id": "966136.0",
+        "round_num": 14,
+        "compute_time_s": 70.65227784495801,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.07209832591247069,
+        "num_examples": 4689
+      },
+      {
+        "client_id": "181010.0",
+        "round_num": 14,
+        "compute_time_s": 108.89514162857085,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08419335849326233,
+        "num_examples": 9286
+      },
+      {
+        "client_id": "472781.0",
+        "round_num": 14,
+        "compute_time_s": 68.64859189093113,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08812396327307175,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 15,
+    "wall_time_s": 79.027898425702,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 109.10621053725481,
+    "total_upload_mb": 90.861504,
+    "total_download_mb": 90.861504,
+    "auroc_macro": 0.8122117797473737,
+    "f1_macro": 0.31463189187093016,
+    "recall_macro": 0.3146056769600221,
+    "precision_macro": 0.39463240385445114,
+    "val_loss": 0.08349503176953176,
+    "mia_vulnerability": 0.576171875,
+    "bandwidth_efficiency": -4.5986059612120964e-06,
+    "client_stats": [
+      {
+        "client_id": "472781.0",
+        "round_num": 15,
+        "compute_time_s": 68.7317432705313,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08780576075082058,
+        "num_examples": 4583
+      },
+      {
+        "client_id": "181010.0",
+        "round_num": 15,
+        "compute_time_s": 109.10621053725481,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08183369247307037,
+        "num_examples": 9286
+      },
+      {
+        "client_id": "966136.0",
+        "round_num": 15,
+        "compute_time_s": 69.93995221797377,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.07164157118189009,
+        "num_examples": 4689
+      }
+    ]
+  },
+  {
+    "round_num": 16,
+    "wall_time_s": 77.93468457786366,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 108.94492654874921,
+    "total_upload_mb": 90.861504,
+    "total_download_mb": 90.861504,
+    "auroc_macro": 0.813095479559335,
+    "f1_macro": 0.3191259896833133,
+    "recall_macro": 0.3091039692429576,
+    "precision_macro": 0.39018170477877673,
+    "val_loss": 0.08359280296646657,
+    "mia_vulnerability": 0.58203125,
+    "bandwidth_efficiency": 4.862894477078803e-06,
+    "client_stats": [
+      {
+        "client_id": "181010.0",
+        "round_num": 16,
+        "compute_time_s": 108.94492654874921,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08071600207737807,
+        "num_examples": 9286
+      },
+      {
+        "client_id": "966136.0",
+        "round_num": 16,
+        "compute_time_s": 70.16716102138162,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.07103020659558577,
+        "num_examples": 4689
+      },
+      {
+        "client_id": "472781.0",
+        "round_num": 16,
+        "compute_time_s": 68.66269919462502,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08782714923153391,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 17,
+    "wall_time_s": 77.47058958094567,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 109.44348346628249,
+    "total_upload_mb": 90.861504,
+    "total_download_mb": 90.861504,
+    "auroc_macro": 0.8131763465653837,
+    "f1_macro": 0.3239351617235104,
+    "recall_macro": 0.3242706641322587,
+    "precision_macro": 0.3885107797225436,
+    "val_loss": 0.08324842524756383,
+    "mia_vulnerability": 0.583984375,
+    "bandwidth_efficiency": 4.4500147195836406e-07,
+    "client_stats": [
+      {
+        "client_id": "966136.0",
+        "round_num": 17,
+        "compute_time_s": 69.99296390917152,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.0707555477290529,
+        "num_examples": 4689
+      },
+      {
+        "client_id": "472781.0",
+        "round_num": 17,
+        "compute_time_s": 69.09121849574149,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.0866363736299368,
+        "num_examples": 4583
+      },
+      {
+        "client_id": "181010.0",
+        "round_num": 17,
+        "compute_time_s": 109.44348346628249,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.07959399387754243,
+        "num_examples": 9286
+      }
+    ]
+  },
+  {
+    "round_num": 18,
+    "wall_time_s": 79.70670911623165,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 109.14310916885734,
+    "total_upload_mb": 90.861504,
+    "total_download_mb": 90.861504,
+    "auroc_macro": 0.8117621350731905,
+    "f1_macro": 0.3288369458065733,
+    "recall_macro": 0.32418826327304734,
+    "precision_macro": 0.37766043515946174,
+    "val_loss": 0.08376618309195885,
+    "mia_vulnerability": 0.58984375,
+    "bandwidth_efficiency": -7.782236865643503e-06,
+    "client_stats": [
+      {
+        "client_id": "966136.0",
+        "round_num": 18,
+        "compute_time_s": 70.42771769780666,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.07011215386223303,
+        "num_examples": 4689
+      },
+      {
+        "client_id": "181010.0",
+        "round_num": 18,
+        "compute_time_s": 109.14310916885734,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.07768729138990928,
+        "num_examples": 9286
+      },
+      {
+        "client_id": "472781.0",
+        "round_num": 18,
+        "compute_time_s": 68.72163955122232,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08636373880651448,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 19,
+    "wall_time_s": 80.08435028418899,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 108.91525953356177,
+    "total_upload_mb": 90.861504,
+    "total_download_mb": 90.861504,
+    "auroc_macro": 0.8100698465615316,
+    "f1_macro": 0.3362356557910199,
+    "recall_macro": 0.3227474277884952,
+    "precision_macro": 0.40304132106317353,
+    "val_loss": 0.08442939956427367,
+    "mia_vulnerability": 0.6015625,
+    "bandwidth_efficiency": -9.312461477959487e-06,
+    "client_stats": [
+      {
+        "client_id": "966136.0",
+        "round_num": 19,
+        "compute_time_s": 70.33112456742674,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.07018628759845479,
+        "num_examples": 4689
+      },
+      {
+        "client_id": "472781.0",
+        "round_num": 19,
+        "compute_time_s": 68.55202924646437,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08586851788775904,
+        "num_examples": 4583
+      },
+      {
+        "client_id": "181010.0",
+        "round_num": 19,
+        "compute_time_s": 108.91525953356177,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.0756614992202356,
+        "num_examples": 9286
+      }
+    ]
+  },
+  {
+    "round_num": 20,
+    "wall_time_s": 79.66875405190513,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 108.96938202157617,
+    "total_upload_mb": 90.861504,
+    "total_download_mb": 90.861504,
+    "auroc_macro": 0.8109191548081125,
+    "f1_macro": 0.3401858464984692,
+    "recall_macro": 0.34218232620595507,
+    "precision_macro": 0.4164028793588363,
+    "val_loss": 0.08517450103236576,
+    "mia_vulnerability": 0.591796875,
+    "bandwidth_efficiency": 4.6736418020381625e-06,
+    "client_stats": [
+      {
+        "client_id": "472781.0",
+        "round_num": 20,
+        "compute_time_s": 68.51300276443362,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08451465532913074,
+        "num_examples": 4583
+      },
+      {
+        "client_id": "966136.0",
+        "round_num": 20,
+        "compute_time_s": 70.09221875667572,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.0690951690537064,
+        "num_examples": 4689
+      },
+      {
+        "client_id": "181010.0",
+        "round_num": 20,
+        "compute_time_s": 108.96938202157617,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.0743209018917947,
+        "num_examples": 9286
+      }
+    ]
+  },
+  {
+    "round_num": 21,
+    "wall_time_s": 79.89033463597298,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 109.11709259357303,
+    "total_upload_mb": 90.861504,
+    "total_download_mb": 90.861504,
+    "auroc_macro": 0.8079851373108624,
+    "f1_macro": 0.32669932261491436,
+    "recall_macro": 0.3356774700997522,
+    "precision_macro": 0.3613900530047606,
+    "val_loss": 0.08556160644801121,
+    "mia_vulnerability": 0.61328125,
+    "bandwidth_efficiency": -1.614554771870211e-05,
+    "client_stats": [
+      {
+        "client_id": "472781.0",
+        "round_num": 21,
+        "compute_time_s": 68.73326700739563,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08403947647218105,
+        "num_examples": 4583
+      },
+      {
+        "client_id": "966136.0",
+        "round_num": 21,
+        "compute_time_s": 70.15454280655831,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.06830611008487336,
+        "num_examples": 4689
+      },
+      {
+        "client_id": "181010.0",
+        "round_num": 21,
+        "compute_time_s": 109.11709259357303,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.07176937606057217,
+        "num_examples": 9286
+      }
+    ]
+  },
+  {
+    "round_num": 22,
+    "wall_time_s": 82.8554742638953,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 108.83068563323468,
+    "total_upload_mb": 90.861504,
+    "total_download_mb": 90.861504,
+    "auroc_macro": 0.8037548716821042,
+    "f1_macro": 0.3291616007917907,
+    "recall_macro": 0.33576392874968236,
+    "precision_macro": 0.38386146686765166,
+    "val_loss": 0.08634484041144026,
+    "mia_vulnerability": 0.619140625,
+    "bandwidth_efficiency": -2.3278646305250285e-05,
+    "client_stats": [
+      {
+        "client_id": "472781.0",
+        "round_num": 22,
+        "compute_time_s": 69.0079669188708,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08340511155816224,
+        "num_examples": 4583
+      },
+      {
+        "client_id": "181010.0",
+        "round_num": 22,
+        "compute_time_s": 108.83068563323468,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.06994883016008756,
+        "num_examples": 9286
+      },
+      {
+        "client_id": "966136.0",
+        "round_num": 22,
+        "compute_time_s": 70.24592321831733,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.06761486922735221,
+        "num_examples": 4689
+      }
+    ]
+  },
+  {
+    "round_num": 23,
+    "wall_time_s": 79.74923998396844,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 108.98482283949852,
+    "total_upload_mb": 90.861504,
+    "total_download_mb": 90.861504,
+    "auroc_macro": 0.8054003239337255,
+    "f1_macro": 0.3350272431572578,
+    "recall_macro": 0.31734748965324977,
+    "precision_macro": 0.41030168421697594,
+    "val_loss": 0.08827749657993195,
+    "mia_vulnerability": 0.634765625,
+    "bandwidth_efficiency": 9.054727135164256e-06,
+    "client_stats": [
+      {
+        "client_id": "966136.0",
+        "round_num": 23,
+        "compute_time_s": 70.53170718904585,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.06643658274248855,
+        "num_examples": 4689
+      },
+      {
+        "client_id": "472781.0",
+        "round_num": 23,
+        "compute_time_s": 68.89322388730943,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08244176625788628,
+        "num_examples": 4583
+      },
+      {
+        "client_id": "181010.0",
+        "round_num": 23,
+        "compute_time_s": 108.98482283949852,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.06719656116489707,
+        "num_examples": 9286
+      }
+    ]
+  },
+  {
+    "round_num": 24,
+    "wall_time_s": 78.30861574597657,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 109.0351945310831,
+    "total_upload_mb": 90.861504,
+    "total_download_mb": 90.861504,
+    "auroc_macro": 0.8015579491958599,
+    "f1_macro": 0.33532000080972174,
+    "recall_macro": 0.3534254902058837,
+    "precision_macro": 0.3599533714230424,
+    "val_loss": 0.08810454548326674,
+    "mia_vulnerability": 0.6171875,
+    "bandwidth_efficiency": -2.1144129079492452e-05,
+    "client_stats": [
+      {
+        "client_id": "966136.0",
+        "round_num": 24,
+        "compute_time_s": 70.27733202744275,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.0657078134891105,
+        "num_examples": 4689
+      },
+      {
+        "client_id": "181010.0",
+        "round_num": 24,
+        "compute_time_s": 109.0351945310831,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.06543420784432312,
+        "num_examples": 9286
+      },
+      {
+        "client_id": "472781.0",
+        "round_num": 24,
+        "compute_time_s": 68.61674423888326,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08212029037775694,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 25,
+    "wall_time_s": 79.01098132831976,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 108.9510945007205,
+    "total_upload_mb": 90.861504,
+    "total_download_mb": 90.861504,
+    "auroc_macro": 0.7975749448353828,
+    "f1_macro": 0.33306165214847117,
+    "recall_macro": 0.32303958484699763,
+    "precision_macro": 0.4000895120064897,
+    "val_loss": 0.09009941191692397,
+    "mia_vulnerability": 0.626953125,
+    "bandwidth_efficiency": -2.1917997089708363e-05,
+    "client_stats": [
+      {
+        "client_id": "472781.0",
+        "round_num": 25,
+        "compute_time_s": 68.86197671294212,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08095260402122578,
+        "num_examples": 4583
+      },
+      {
+        "client_id": "181010.0",
+        "round_num": 25,
+        "compute_time_s": 108.9510945007205,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.06322527258046742,
+        "num_examples": 9286
+      },
+      {
+        "client_id": "966136.0",
+        "round_num": 25,
+        "compute_time_s": 70.0976981036365,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.06548308507118324,
+        "num_examples": 4689
+      }
+    ]
+  },
+  {
+    "round_num": 26,
+    "wall_time_s": 79.57558918884024,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 109.39911894872785,
+    "total_upload_mb": 90.861504,
+    "total_download_mb": 90.861504,
+    "auroc_macro": 0.7955216030459599,
+    "f1_macro": 0.33749740512722276,
+    "recall_macro": 0.34506928397070047,
+    "precision_macro": 0.3626794311016154,
+    "val_loss": 0.0910873950748404,
+    "mia_vulnerability": 0.642578125,
+    "bandwidth_efficiency": -1.1299294525341325e-05,
+    "client_stats": [
+      {
+        "client_id": "966136.0",
+        "round_num": 26,
+        "compute_time_s": 70.18270066473633,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.06474102977408122,
+        "num_examples": 4689
+      },
+      {
+        "client_id": "181010.0",
+        "round_num": 26,
+        "compute_time_s": 109.39911894872785,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.0608972214290808,
+        "num_examples": 9286
+      },
+      {
+        "client_id": "472781.0",
+        "round_num": 26,
+        "compute_time_s": 68.5131731852889,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.08002625851260199,
+        "num_examples": 4583
+      }
+    ]
+  },
+  {
+    "round_num": 27,
+    "wall_time_s": 78.16635639499873,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 109.52154861669987,
+    "total_upload_mb": 90.861504,
+    "total_download_mb": 90.861504,
+    "auroc_macro": 0.7988374213617372,
+    "f1_macro": 0.3324816848852336,
+    "recall_macro": 0.34029894366733027,
+    "precision_macro": 0.3643629925298355,
+    "val_loss": 0.09186997061583088,
+    "mia_vulnerability": 0.638671875,
+    "bandwidth_efficiency": 1.824655200390101e-05,
+    "client_stats": [
+      {
+        "client_id": "472781.0",
+        "round_num": 27,
+        "compute_time_s": 68.83968084864318,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.07948401922008375,
+        "num_examples": 4583
+      },
+      {
+        "client_id": "966136.0",
+        "round_num": 27,
+        "compute_time_s": 70.09301745891571,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.06399725561272608,
+        "num_examples": 4689
+      },
+      {
+        "client_id": "181010.0",
+        "round_num": 27,
+        "compute_time_s": 109.52154861669987,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.058763663252366,
+        "num_examples": 9286
+      }
+    ]
+  },
+  {
+    "round_num": 28,
+    "wall_time_s": 81.94318212289363,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 108.91962090786546,
+    "total_upload_mb": 90.861504,
+    "total_download_mb": 90.861504,
+    "auroc_macro": 0.7982635784382913,
+    "f1_macro": 0.3266032830427615,
+    "recall_macro": 0.32701927408493603,
+    "precision_macro": 0.38058170224476723,
+    "val_loss": 0.09587272577632856,
+    "mia_vulnerability": 0.662109375,
+    "bandwidth_efficiency": -3.1577890425733345e-06,
+    "client_stats": [
+      {
+        "client_id": "966136.0",
+        "round_num": 28,
+        "compute_time_s": 70.32090639602393,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.06256597910127411,
+        "num_examples": 4689
+      },
+      {
+        "client_id": "472781.0",
+        "round_num": 28,
+        "compute_time_s": 68.56951950117946,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.07924659643973504,
+        "num_examples": 4583
+      },
+      {
+        "client_id": "181010.0",
+        "round_num": 28,
+        "compute_time_s": 108.91962090786546,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.05630173155202948,
+        "num_examples": 9286
+      }
+    ]
+  },
+  {
+    "round_num": 29,
+    "wall_time_s": 81.2323722327128,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 108.83810053300112,
+    "total_upload_mb": 90.861504,
+    "total_download_mb": 90.861504,
+    "auroc_macro": 0.7945309450513697,
+    "f1_macro": 0.34059005888818555,
+    "recall_macro": 0.34257601155834383,
+    "precision_macro": 0.3731354642762438,
+    "val_loss": 0.0940914123375629,
+    "mia_vulnerability": 0.654296875,
+    "bandwidth_efficiency": -2.054023553760263e-05,
+    "client_stats": [
+      {
+        "client_id": "472781.0",
+        "round_num": 29,
+        "compute_time_s": 69.00676367245615,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.07792979814893716,
+        "num_examples": 4583
+      },
+      {
+        "client_id": "181010.0",
+        "round_num": 29,
+        "compute_time_s": 108.83810053300112,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.05418983083218336,
+        "num_examples": 9286
+      },
+      {
+        "client_id": "966136.0",
+        "round_num": 29,
+        "compute_time_s": 70.562476137653,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.06267448078381689,
+        "num_examples": 4689
+      }
+    ]
+  },
+  {
+    "round_num": 30,
+    "wall_time_s": 79.54980689706281,
+    "aggregation_time_s": 0.0,
+    "max_client_compute_s": 108.75160609837621,
+    "total_upload_mb": 90.861504,
+    "total_download_mb": 90.861504,
+    "auroc_macro": 0.7934500048842605,
+    "f1_macro": 0.34061079173006564,
+    "recall_macro": 0.3494927598984772,
+    "precision_macro": 0.34824497163175877,
+    "val_loss": 0.09584916638325251,
+    "mia_vulnerability": 0.66796875,
+    "bandwidth_efficiency": -5.948284584355629e-06,
+    "client_stats": [
+      {
+        "client_id": "472781.0",
+        "round_num": 30,
+        "compute_time_s": 68.98267593979836,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.07726623368013155,
+        "num_examples": 4583
+      },
+      {
+        "client_id": "966136.0",
+        "round_num": 30,
+        "compute_time_s": 70.18670803960413,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.06165346355266767,
+        "num_examples": 4689
+      },
+      {
+        "client_id": "181010.0",
+        "round_num": 30,
+        "compute_time_s": 108.75160609837621,
+        "upload_bytes": 30287168,
+        "download_bytes": 30287168,
+        "train_loss": 0.05243688640666419,
+        "num_examples": 9286
+      }
+    ]
+  }
+]

@@ -61,22 +61,22 @@ class Config:
     backbone: str = "densenet121"
     pretrained: bool = True
     num_classes: int = NUM_CLASSES
-    dropout_rate: float = 0.3
+    dropout_rate: float = 0.4
 
     # Training
     batch_size: int = 32
     max_epochs: int = 50
     learning_rate: float = 1e-4
-    weight_decay: float = 1e-5
+    weight_decay: float = 1e-3
     lr_patience: int = 5
     lr_factor: float = 0.5
     gradient_clip_val: float = 1.0
 
     # Sampler
-    use_weighted_sampler: bool = True
+    use_weighted_sampler: bool = False
     sampler_agg: str = "max"
 
-    use_mixup: bool = True
+    use_mixup: bool = False
     mixup_alpha: float = 0.4         # Beta(alpha, alpha) concentration parameter
 
     # Asymmetric loss
