@@ -12,11 +12,7 @@ python src/baseline/train.py
 - The server_address passed to launch_clients.sh must match the machine running the server node.
 - See code for configurable parameters
 
-## Terminal 1:
-bash scripts/launch_server.sh --num_rounds 30 --port 8084
-
-## Terminal 2:
-bash scripts/launch_clients.sh --server_address boston:8084 --local_epochs 1
+bash scripts/launch_fl.sh --num_rounds 100 --port 8084 --server_address boston:8084 --local_epochs 1
 
 # Hierarchical Instructions
 bash scripts/launch_hierarchical.sh
