@@ -9,7 +9,6 @@ import numpy as np
 import pandas as pd
 import pytorch_lightning as pl
 import torch
-from sklearn.model_selection import train_test_split
 from torch.utils.data import DataLoader, WeightedRandomSampler
 
 from baseline.config import CFG, DISEASE_LABELS, ID_HOSPITALS, OOD_HOSPITAL
@@ -50,8 +49,7 @@ class ChestXrayDataModule(pl.LightningDataModule):
 
     For federated setup:
     Pass hospital_id="hospital_a" (or b / c / d) to restrict loading to a
-    single hospital.  The train/val/test split then applies only to that
-    hospital's rows.
+    single hospital.
     """
 
     def __init__(self, cfg=CFG, hospital_id: Optional[str] = None) -> None:
@@ -69,71 +67,38 @@ class ChestXrayDataModule(pl.LightningDataModule):
 
     # Internal: Parquet loading
 
-    def _load_hospital_parquets(self, hospital_ids: List[str]) -> pd.DataFrame:
+    def _load_hospital_parquets(self, hospital_ids: List[str], split_prefix: Optional[str] = None) -> pd.DataFrame:
+        """
+        Loads parquet files based on a split prefix (e.g., train, eval, test).
+        """
         frames: List[pd.DataFrame] = []
         for h_id in hospital_ids:
-            pattern = str(self.cfg.data_root / h_id / "**" / "*.parquet")
+            if split_prefix:
+                pattern = str(self.cfg.data_root / h_id / "**" / f"{split_prefix}*.parquet")
+            else:
+                pattern = str(self.cfg.data_root / h_id / "**" / "*.parquet")
+                
             paths = glob.glob(pattern, recursive=True)
             if not paths:
-                logger.warning("No Parquet files for %s at %s", h_id, pattern)
+                logger.warning("No %s Parquet files for %s at %s", split_prefix or "any", h_id, pattern)
                 continue
-            logger.info("Loading %d file(s) from %s …", len(paths), h_id)
+            logger.info("Loading %d file(s) from %s (split: %s) …", len(paths), h_id, split_prefix or "all")
             for p in paths:
                 df = pd.read_parquet(p)
                 df["_source_hospital"] = h_id
                 frames.append(df)
         if not frames:
             raise FileNotFoundError(
-                f"No Parquet files found. data_root={self.cfg.data_root}"
+                f"No Parquet files found. data_root={self.cfg.data_root}, split={split_prefix}"
             )
         combined = pd.concat(frames, ignore_index=True)
-        logger.info("Total rows: %d", len(combined))
+        logger.info("Total %s rows: %d", split_prefix or "all", len(combined))
         return combined
 
     def _validate_columns(self, df: pd.DataFrame) -> None:
         for col in ["label", self.cfg.image_col]:
             if col not in df.columns:
                 raise ValueError(f"Missing column '{col}'. Found: {df.columns.tolist()}")
-
-    # Internal: stratified split
-
-    @staticmethod
-    def _stratified_split(
-        df: pd.DataFrame,
-        label_matrix: np.ndarray,
-        val_frac: float,
-        test_frac: float,
-        seed: int,
-    ) -> Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
-        indices = np.arange(len(df))
-        try:
-            from skmultilearn.model_selection import iterative_train_test_split
-            X = indices.reshape(-1, 1)
-            X_tv, y_tv, X_te, _ = iterative_train_test_split(X, label_matrix, test_size=test_frac)
-            rel_val = val_frac / (1.0 - test_frac)
-            X_tr, _, X_val, _ = iterative_train_test_split(X_tv, y_tv, test_size=rel_val)
-            train_idx, val_idx, test_idx = X_tr.flatten(), X_val.flatten(), X_te.flatten()
-            logger.info("Iterative split: train=%d  val=%d  test=%d", len(train_idx), len(val_idx), len(test_idx))
-            return (
-                df.iloc[train_idx].reset_index(drop=True),
-                df.iloc[val_idx].reset_index(drop=True),
-                df.iloc[test_idx].reset_index(drop=True),
-            )
-        except ImportError:
-            logger.warning("scikit-multilearn not found; falling back to binary stratification.")
-
-        df = df.copy()
-        df["_any"] = df["label"].apply(lambda e: int(
-            any(item in DISEASE_LABELS for item in e)
-            if isinstance(e, (list, tuple, np.ndarray)) else 0
-        ))
-        trainval, test = train_test_split(df, test_size=test_frac, stratify=df["_any"], random_state=seed)
-        train, val = train_test_split(trainval, test_size=val_frac / (1.0 - test_frac),
-                                      stratify=trainval["_any"], random_state=seed)
-        for frame in [train, val, test]:
-            frame.drop(columns=["_any"], inplace=True, errors="ignore")
-        logger.info("Binary split: train=%d  val=%d  test=%d", len(train), len(val), len(test))
-        return train.reset_index(drop=True), val.reset_index(drop=True), test.reset_index(drop=True)
 
     # LightningDataModule hooks
 
@@ -156,27 +121,16 @@ class ChestXrayDataModule(pl.LightningDataModule):
             source_hospitals = ID_HOSPITALS
             logger.info("[Centralized] Pooling hospitals: %s", source_hospitals)
 
-        id_df = self._load_hospital_parquets(source_hospitals)
-        self._validate_columns(id_df)
+        # Load the predefined splits
+        self.train_df = self._load_hospital_parquets(source_hospitals, split_prefix="train")
+        self.val_df = self._load_hospital_parquets(source_hospitals, split_prefix="eval")
+        self.test_df = self._load_hospital_parquets(source_hospitals, split_prefix="test")
 
-        # Build temporary dataset to extract the label matrix
-        _tmp = ChestXrayDataset(
-            dataframe=id_df,
-            transforms=_noop,
-            image_col=self.cfg.image_col,
-            image_path_col=self.cfg.image_path_col,
-            label_col="label",
-        )
-        full_label_matrix = _tmp.label_matrix
+        self._validate_columns(self.train_df)
+        self._validate_columns(self.val_df)
+        self._validate_columns(self.test_df)
 
-        self.train_df, self.val_df, self.test_df = self._stratified_split(
-            id_df,
-            label_matrix=full_label_matrix,
-            val_frac=self.cfg.val_fraction,
-            test_frac=self.cfg.test_fraction,
-            seed=self.cfg.seed,
-        )
-
+        # Extract train label matrix for pos_weight and sampler
         _train_tmp = ChestXrayDataset(
             dataframe=self.train_df,
             transforms=_noop,
@@ -194,13 +148,10 @@ class ChestXrayDataModule(pl.LightningDataModule):
 
         # OOD set: only loaded in centralized mode or if hospital_id == OOD_HOSPITAL (for federated)
         if not self.hospital_id or self.hospital_id == OOD_HOSPITAL:
-            try:
-                self.ood_df = self._load_hospital_parquets([OOD_HOSPITAL])
-                self._validate_columns(self.ood_df)
-                logger.info("OOD set (hospital_d) rows: %d", len(self.ood_df))
-            except FileNotFoundError:
-                logger.warning("hospital_d not found – OOD evaluation will be skipped.")
-                self.ood_df = None
+            # Attempt to load just the test split for OOD if it exists
+            self.ood_df = self._load_hospital_parquets([OOD_HOSPITAL], split_prefix="test")
+            self._validate_columns(self.ood_df)
+            logger.info("OOD set (hospital_d) rows: %d", len(self.ood_df))
 
     # DataLoaders
 
