@@ -8,7 +8,7 @@
 python src/baseline/train.py
 
 # Federated Instructions
-- Launch_server.sh can be ran anywhere.
+- launch_server.sh can be ran anywhere.
 - The server_address passed to launch_clients.sh must match the machine running the server node.
 - See code for configurable parameters
 
@@ -17,3 +17,6 @@ bash scripts/launch_server.sh --num_rounds 30 --port 8084
 
 ## Terminal 2:
 bash scripts/launch_clients.sh --server_address boston:8084 --local_epochs 1
+
+# Hierarchical Instructions
+bash scripts/launch_hierarchical.sh
