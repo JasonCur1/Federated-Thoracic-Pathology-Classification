@@ -13,3 +13,4 @@ logs/
 
 # System files
 .DS_Store
+fl_logs/
