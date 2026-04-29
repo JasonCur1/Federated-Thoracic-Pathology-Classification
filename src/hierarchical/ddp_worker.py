@@ -78,7 +78,7 @@ def main() -> None:
 
         trainer = pl.Trainer(
             accelerator="gpu" if torch.cuda.is_available() else "cpu",
-            devices=-1,
+            devices=1,
             num_nodes=args.num_nodes,
             strategy="ddp",
             max_epochs=args.local_epochs,

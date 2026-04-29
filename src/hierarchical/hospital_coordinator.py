@@ -163,7 +163,7 @@ class HospitalCoordinatorClient(fl.client.Client):
 
         trainer = pl.Trainer(
             accelerator="gpu" if torch.cuda.is_available() else "cpu",
-            devices=-1,
+            devices=1,
             num_nodes=self.num_nodes,
             strategy="ddp",
             max_epochs=local_epochs,

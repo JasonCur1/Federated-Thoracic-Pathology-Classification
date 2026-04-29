@@ -44,9 +44,9 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-# Helpers
 def get_parameters(model: torch.nn.Module) -> List[np.ndarray]:
     return [val.cpu().numpy() for _, val in model.state_dict().items()]
+
 
 def set_parameters(model: torch.nn.Module, parameters: List[np.ndarray]) -> None:
     state_dict = OrderedDict(
@@ -57,8 +57,8 @@ def set_parameters(model: torch.nn.Module, parameters: List[np.ndarray]) -> None
 
 def weighted_average(metrics_list: List[Tuple[int, Metrics]]) -> Metrics:
     """
-    Weighted average of scalar metrics from multiple clients.
-    Weight = number of examples for that client (hospital coordinator).
+    Weighted average of scalar metrics from multiple hospital coordinators.
+    Weight = number of examples for that hospital coordinator.
     """
     if not metrics_list:
         return {}
@@ -79,7 +79,14 @@ def weighted_average(metrics_list: List[Tuple[int, Metrics]]) -> Metrics:
 
 class MasterFedAvg(FedAvg):
     """
-    Extends FedAvg for the Master Coordinator.
+    Master-level FedAvg for hierarchical FL.
+
+    Default behavior is training-only:
+      - no server-side OOD loading before Flower starts
+      - no MIA probing inside the FL communication loop
+      - save global checkpoints for standalone evaluation later
+
+    Server-side OOD/MIA can still be enabled using --enable_server_eval.
     """
 
     def __init__(
@@ -89,6 +96,8 @@ class MasterFedAvg(FedAvg):
         metrics_logger: FLMetricsLogger,
         device: torch.device,
         mia_member_loader=None,
+        save_dir: Optional[Union[str, Path]] = None,
+        save_every_round: bool = True,
         **kwargs,
     ) -> None:
         super().__init__(**kwargs)
@@ -97,6 +106,31 @@ class MasterFedAvg(FedAvg):
         self.metrics_logger = metrics_logger
         self.device = device
         self.mia_member_loader = mia_member_loader
+        self.save_dir = Path(save_dir) if save_dir is not None else None
+        self.save_every_round = save_every_round
+        if self.save_dir is not None:
+            self.save_dir.mkdir(parents=True, exist_ok=True)
+
+    def _save_global_model(self, server_round: int, name: Optional[str] = None) -> None:
+        """Save the current global model state_dict for later standalone evaluation."""
+        if self.save_dir is None:
+            return
+
+        filename = name or f"global_round_{server_round}.pt"
+        path = self.save_dir / filename
+        payload = {
+            "round": server_round,
+            "model_state_dict": self.global_model.state_dict(),
+            "disease_labels": DISEASE_LABELS,
+            "cfg": {
+                "image_size": CFG.image_size,
+                "backbone": CFG.backbone,
+                "pretrained": CFG.pretrained,
+            },
+        }
+        torch.save(payload, path)
+        torch.save(payload, self.save_dir / "global_latest.pt")
+        logger.info("Saved global model checkpoint: %s", path)
 
     def aggregate_fit(
         self,
@@ -109,10 +143,6 @@ class MasterFedAvg(FedAvg):
             logger.warning("Round %d: %d coordinator(s) failed during fit.", server_round, len(failures))
 
         self.metrics_logger.start_round(server_round)
-
-        total_upload = 0
-        total_download = 0
-        max_compute = 0.0
 
         for proxy, fit_res in results:
             m = fit_res.metrics
@@ -133,9 +163,6 @@ class MasterFedAvg(FedAvg):
                     num_examples=fit_res.num_examples,
                 )
             )
-            total_upload += upload
-            total_download += download
-            max_compute = max(max_compute, compute)
 
         t_agg_start = time.perf_counter()
         aggregated_parameters, aggregated_metrics = super().aggregate_fit(
@@ -146,6 +173,8 @@ class MasterFedAvg(FedAvg):
         if aggregated_parameters is not None:
             set_parameters(self.global_model, parameters_to_ndarrays(aggregated_parameters))
             logger.info("Round %d: global model updated (FedAvg, agg_time=%.2fs)", server_round, agg_time)
+            if self.save_every_round:
+                self._save_global_model(server_round)
 
         return aggregated_parameters, aggregated_metrics
 
@@ -179,21 +208,34 @@ class MasterFedAvg(FedAvg):
             agg.update({f"ood_{k}": v for k, v in ood_metrics.items()})
 
         mia_score = self._run_mia(server_round)
+        if not np.isnan(mia_score):
+            agg["mia_vulnerability"] = mia_score
 
         self.metrics_logger.log_aggregated_metrics(
-            auroc=auroc, f1=f1, recall=recall, precision=precision,
+            auroc=auroc,
+            f1=f1,
+            recall=recall,
+            precision=precision,
             val_loss=val_loss,
         )
-        self.metrics_logger.log_mia_score(mia_score)
+        if not np.isnan(mia_score):
+            self.metrics_logger.log_mia_score(mia_score)
         self.metrics_logger.end_round()
         self.metrics_logger.save()
 
         logger.info(
-            "Round %d | AUROC=%.4f  F1=%.4f  Recall=%.4f  Prec=%.4f  Loss=%.4f  MIA=%.4f",
-            server_round, auroc, f1, recall, precision, val_loss, mia_score,
+            "Round %d | AUROC=%.4f  F1=%.4f  Recall=%.4f  Prec=%.4f  Loss=%.4f",
+            server_round,
+            auroc,
+            f1,
+            recall,
+            precision,
+            val_loss,
         )
+        if not np.isnan(mia_score):
+            logger.info("Round %d | MIA vulnerability=%.4f", server_round, mia_score)
 
-        return val_loss, {**agg, "mia_vulnerability": mia_score}
+        return val_loss, agg
 
     @torch.no_grad()
     def _server_side_ood_eval(self) -> Dict[str, float]:
@@ -226,7 +268,7 @@ class MasterFedAvg(FedAvg):
             "recall_macro": MultilabelRecall(num_labels=n, average="macro")(probs_cat, targets_cat).item(),
             "precision_macro": MultilabelPrecision(num_labels=n, average="macro")(probs_cat, targets_cat).item(),
         }
-    
+
     def _run_mia(self, server_round: int) -> float:
         if self.mia_member_loader is None or self.ood_datamodule is None:
             return float("nan")
@@ -236,6 +278,7 @@ class MasterFedAvg(FedAvg):
             return float("nan")
 
         from baseline.dataset import ChestXrayDataset, build_eval_transforms
+
         ood_dataset = ChestXrayDataset(
             dataframe=self.ood_datamodule.ood_df,
             transforms=build_eval_transforms(CFG.image_size),
@@ -255,6 +298,7 @@ class MasterFedAvg(FedAvg):
             non_member_loader=non_member_loader,
         )
 
+
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser()
     p.add_argument("--port", type=int, default=8080)
@@ -264,6 +308,17 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--fraction_evaluate", type=float, default=1.0)
     p.add_argument("--local_epochs", type=int, default=1)
     p.add_argument("--log_dir", type=str, default="fl_logs/master")
+    p.add_argument("--save_dir", type=str, default="fl_logs/master/checkpoints")
+    p.add_argument(
+        "--enable_server_eval",
+        action="store_true",
+        help="Enable server-side OOD evaluation and MIA probing during FL training. Disabled by default for faster and more robust hierarchical training.",
+    )
+    p.add_argument(
+        "--no_save_every_round",
+        action="store_true",
+        help="Only save final/latest model instead of saving one checkpoint per round.",
+    )
     p.add_argument("--seed", type=int, default=CFG.seed)
     return p.parse_args()
 
@@ -275,23 +330,26 @@ def main() -> None:
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     logger.info("Master Coordinator device: %s", device)
 
-    logger.info("Initialising global model …")
+    logger.info("Initialising global model ...")
     global_model = ChestXrayClassifier(pos_weight=None, cfg=CFG)
     global_model.to(device)
     initial_params = ndarrays_to_parameters(get_parameters(global_model))
 
-    logger.info("Loading server-side datamodule for OOD eval and MIA probing …")
     ood_dm: Optional[ChestXrayDataModule] = None
     mia_member_loader = None
-    try:
-        server_dm = ChestXrayDataModule(cfg=CFG)
-        server_dm.setup()
-        ood_dm = server_dm
 
-        from baseline.dataset import ChestXrayDataset, build_eval_transforms
-        if server_dm.val_df is not None and len(server_dm.val_df) > 0:
+    if args.enable_server_eval:
+        logger.info("Loading server-side datamodule for OOD eval and MIA probing ...")
+        try:
+            server_dm = ChestXrayDataModule(cfg=CFG)
+            server_dm.setup()
+            ood_dm = server_dm
+
+            from baseline.dataset import ChestXrayDataset, build_eval_transforms
+
+            if server_dm.train_df is not None and len(server_dm.train_df) > 0:
                 member_dataset = ChestXrayDataset(
-                    dataframe=server_dm.val_df,
+                    dataframe=server_dm.train_df,
                     transforms=build_eval_transforms(CFG.image_size),
                     image_col=CFG.image_col,
                     image_path_col=CFG.image_path_col,
@@ -299,9 +357,13 @@ def main() -> None:
                 )
                 mia_member_loader = make_small_loader(member_dataset, n_samples=256, batch_size=64)
                 logger.info("MIA member loader ready.")
-                
-    except Exception as exc:
-        logger.warning("Could not set up server-side OOD datamodule: %s", exc)
+        except Exception as exc:
+            logger.warning("Could not set up server-side OOD/MIA datamodule: %s", exc)
+    else:
+        logger.info(
+            "Server-side OOD/MIA evaluation disabled during training. "
+            "Global checkpoints will be saved for standalone evaluation later."
+        )
 
     metrics_logger = FLMetricsLogger(log_dir=args.log_dir)
 
@@ -311,6 +373,8 @@ def main() -> None:
         metrics_logger=metrics_logger,
         device=device,
         mia_member_loader=mia_member_loader,
+        save_dir=args.save_dir,
+        save_every_round=not args.no_save_every_round,
         fraction_fit=args.fraction_fit,
         fraction_evaluate=args.fraction_evaluate,
         min_fit_clients=args.min_clients,
@@ -323,11 +387,15 @@ def main() -> None:
         on_evaluate_config_fn=lambda server_round: {"server_round": server_round},
     )
 
+    strategy._save_global_model(0, name="global_initial.pt")
+
     server_config = fl.server.ServerConfig(num_rounds=args.num_rounds)
 
     logger.info(
         "Starting Master Coordinator on 0.0.0.0:%d  rounds=%d  min_coordinators=%d",
-        args.port, args.num_rounds, args.min_clients,
+        args.port,
+        args.num_rounds,
+        args.min_clients,
     )
 
     fl.server.start_server(
@@ -336,6 +404,7 @@ def main() -> None:
         strategy=strategy,
     )
 
+    strategy._save_global_model(args.num_rounds, name="global_final.pt")
     metrics_logger.save("master_metrics_final.json")
     logger.info("Master Coordinator finished. Metrics saved to %s", args.log_dir)
 
