@@ -1,0 +1,36 @@
+{
+  "checkpoint": "/s/chopin/a/grad/C837864364/Projects/Federated-Thoracic-Pathology-Classification/fl_logs/master/checkpoints/global_final.pt",
+  "device": "cuda",
+  "member_source": {
+    "hospitals": [
+      "hospital_a",
+      "hospital_b",
+      "hospital_c"
+    ],
+    "split": "train",
+    "samples": 512
+  },
+  "non_member_source": {
+    "source": "ood_test",
+    "hospitals": [
+      "hospital_d"
+    ],
+    "split": "test",
+    "samples": 512
+  },
+  "mia": {
+    "attack_type": "loss_threshold_membership_inference",
+    "mia_vulnerability_balanced_accuracy": 0.5283203125,
+    "attack_auc": 0.5029411315917969,
+    "best_loss_threshold": 0.5308403057144515,
+    "member_tpr": 0.9140625,
+    "non_member_tnr": 0.142578125,
+    "member_loss_mean": 0.4169708788394928,
+    "member_loss_std": 0.10886465758085251,
+    "non_member_loss_mean": 0.4164768159389496,
+    "non_member_loss_std": 0.11748125404119492,
+    "num_member_samples": 512,
+    "num_non_member_samples": 512,
+    "interpretation": "0.5 means random guessing; higher means more membership leakage."
+  }
+}

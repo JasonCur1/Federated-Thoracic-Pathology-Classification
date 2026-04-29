@@ -1,0 +1,64 @@
+{
+  "checkpoint": "/s/chopin/a/grad/C837864364/Projects/Federated-Thoracic-Pathology-Classification/fl_logs/master/checkpoints/global_final.pt",
+  "device": "cuda",
+  "id_hospitals": [
+    "hospital_a",
+    "hospital_b",
+    "hospital_c"
+  ],
+  "ood_hospital": "hospital_d",
+  "id_test": {
+    "num_samples": 2413,
+    "auroc_macro": 0.7701756178477626,
+    "f1_macro": 0.2723449080235092,
+    "recall_macro": 0.3024551220728651,
+    "precision_macro": 0.27122122014353656,
+    "per_class_auroc": {
+      "Atelectasis": 0.7320940746795084,
+      "Cardiomegaly": 0.8219300254717833,
+      "Effusion": 0.8272776089315149,
+      "Infiltration": 0.6825783687773032,
+      "Mass": 0.7467511058603731,
+      "Nodule": 0.6752360563544657,
+      "Pneumonia": 0.6871066057112569,
+      "Pneumothorax": 0.8451509829231648,
+      "Consolidation": 0.7658237244519226,
+      "Edema": 0.8439707579838399,
+      "Emphysema": 0.8841185722100656,
+      "Fibrosis": 0.7571136878781635,
+      "Pleural_Thickening": 0.7256250145487558,
+      "Hernia": 0.7876820640865585
+    },
+    "loss": 0.4121951758861542,
+    "loss_std": 0.11993207037448883
+  },
+  "ood_test": {
+    "num_samples": 1222,
+    "auroc_macro": 0.7606401066083109,
+    "f1_macro": 0.2619993236053305,
+    "recall_macro": 0.29401339609869426,
+    "precision_macro": 0.25808536084092015,
+    "per_class_auroc": {
+      "Atelectasis": 0.7056377100671757,
+      "Cardiomegaly": 0.8354824037149476,
+      "Effusion": 0.839169583841701,
+      "Infiltration": 0.6422154802427111,
+      "Mass": 0.7278002947678702,
+      "Nodule": 0.677150313809727,
+      "Pneumonia": 0.5936101250192931,
+      "Pneumothorax": 0.8073907214566316,
+      "Consolidation": 0.6858904408555215,
+      "Edema": 0.8561324506552783,
+      "Emphysema": 0.8498224251648909,
+      "Fibrosis": 0.7910617294149233,
+      "Pleural_Thickening": 0.7155305452530162,
+      "Hernia": 0.9220672682526662
+    },
+    "loss": 0.422519713640213,
+    "loss_std": 0.11419636011123657
+  },
+  "ood_generalization_gap": {
+    "auroc_gap_id_minus_ood": 0.009535511239451622,
+    "interpretation": "Positive gap means ID performance is higher than OOD performance."
+  }
+}
