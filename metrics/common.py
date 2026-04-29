@@ -18,9 +18,9 @@ from sklearn.metrics import (
 )
 from torch.utils.data import DataLoader
 
-# ---------------------------------------------------------------------
+
 # Path setup
-# ---------------------------------------------------------------------
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 SRC_DIR = PROJECT_ROOT / "src"
@@ -35,9 +35,9 @@ from baseline.model import ChestXrayClassifier
 logger = logging.getLogger(__name__)
 
 
-# ---------------------------------------------------------------------
+
 # Logging / JSON helpers
-# ---------------------------------------------------------------------
+
 
 def setup_logging() -> None:
     logging.basicConfig(
@@ -76,9 +76,7 @@ def save_json(payload: Dict, path: Path) -> None:
     logger.info("Saved results → %s", path)
 
 
-# ---------------------------------------------------------------------
 # Model loading
-# ---------------------------------------------------------------------
 
 def load_model_from_checkpoint(checkpoint_path: Path, device: torch.device) -> ChestXrayClassifier:
     checkpoint_path = Path(checkpoint_path)
@@ -120,9 +118,7 @@ def load_model_from_checkpoint(checkpoint_path: Path, device: torch.device) -> C
     return model
 
 
-# ---------------------------------------------------------------------
 # Data loading
-# ---------------------------------------------------------------------
 
 def load_hospital_parquets(hospital_ids: List[str], split_prefix: str) -> pd.DataFrame:
     frames = []
@@ -221,9 +217,7 @@ def make_loader(
     )
 
 
-# ---------------------------------------------------------------------
 # Evaluation helpers
-# ---------------------------------------------------------------------
 
 def sigmoid(x: np.ndarray) -> np.ndarray:
     return 1.0 / (1.0 + np.exp(-x))
@@ -315,9 +309,8 @@ def evaluate_model_on_dataframe(
     return metrics
 
 
-# ---------------------------------------------------------------------
 # MIA helper
-# ---------------------------------------------------------------------
+
 
 def run_loss_threshold_mia(
     member_losses: np.ndarray,
