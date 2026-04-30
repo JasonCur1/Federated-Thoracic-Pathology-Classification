@@ -1,6 +1,6 @@
 {
   "checkpoint": "/s/chopin/a/grad/C837864364/Projects/Federated-Thoracic-Pathology-Classification/fl_logs/master/checkpoints/global_final.pt",
-  "device": "cuda",
+  "device": "cpu",
   "member_source": {
     "hospitals": [
       "hospital_a",
@@ -21,14 +21,14 @@
   "mia": {
     "attack_type": "loss_threshold_membership_inference",
     "mia_vulnerability_balanced_accuracy": 0.5283203125,
-    "attack_auc": 0.5029411315917969,
-    "best_loss_threshold": 0.5308403057144515,
-    "member_tpr": 0.9140625,
-    "non_member_tnr": 0.142578125,
-    "member_loss_mean": 0.4169708788394928,
-    "member_loss_std": 0.10886465758085251,
-    "non_member_loss_mean": 0.4164768159389496,
-    "non_member_loss_std": 0.11748125404119492,
+    "attack_auc": 0.5041465759277344,
+    "best_loss_threshold": 0.5345854393800898,
+    "member_tpr": 0.923828125,
+    "non_member_tnr": 0.1328125,
+    "member_loss_mean": 0.41678497195243835,
+    "member_loss_std": 0.10886260122060776,
+    "non_member_loss_mean": 0.4168354570865631,
+    "non_member_loss_std": 0.11736177653074265,
     "num_member_samples": 512,
     "num_non_member_samples": 512,
     "interpretation": "0.5 means random guessing; higher means more membership leakage."
