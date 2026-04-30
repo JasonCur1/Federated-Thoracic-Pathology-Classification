@@ -33,8 +33,13 @@ class Config:
         default_factory=lambda: Path(__file__).resolve().parents[2]
     )
 
+    data_root_path: Optional[Path] = None # configurable data_root
+    checkpoint_dir_path: Optional[Path] = None
+
     @property
     def data_root(self) -> Path:
+        if self.data_root_path is not None:
+            return self.data_root_path
         return self.project_root / "data"
 
     @property
@@ -43,6 +48,8 @@ class Config:
 
     @property
     def checkpoint_dir(self) -> Path:
+        if self.checkpoint_dir_path is not None:
+            return self.checkpoint_dir_path
         return self.project_root / "checkpoints"
 
     # Data
