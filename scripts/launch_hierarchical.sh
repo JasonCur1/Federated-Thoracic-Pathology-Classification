@@ -8,19 +8,19 @@
 #   herring     = Master FL Server
 #
 #   Hospital A:
-#     perch     = Coordinator / DDP rank 0
-#     barracuda = DDP worker rank 1
+#     marlin     = Coordinator / DDP rank 0
+#     turbot = DDP worker rank 1
 #     sardine   = DDP worker rank 2
 #
 #   Hospital B:
-#     sole      = Coordinator / DDP rank 0
+#     sardine      = Coordinator / DDP rank 0
 #     blowfish  = DDP worker rank 1
-#     turbot    = DDP worker rank 2
+#     swordfish    = DDP worker rank 2
 #
 #   Hospital C:
-#     bonito    = Coordinator / DDP rank 0
-#     flounder  = DDP worker rank 1
-#     shark     = DDP worker rank 2
+#     char    = Coordinator / DDP rank 0
+#     pollock  = DDP worker rank 1
+#     grouper     = DDP worker rank 2
 #
 # Folder structure:
 # project_root/
@@ -52,8 +52,8 @@ MASTER_NODE="herring"
 MASTER_PORT=8084
 
 # Full debug run: all hospitals, but only 1 FL round first
-NUM_ROUNDS=5
-LOCAL_EPOCHS=2
+NUM_ROUNDS=30
+LOCAL_EPOCHS=1
 MIN_CLIENTS=3
 
 # Each hospital has:
@@ -66,16 +66,16 @@ DDP_PORT_B=12446
 DDP_PORT_C=12546
 
 # Hospital A
-COORD_A="perch"
-WORKERS_A=("barracuda" "sardine")
+COORD_A="marlin"
+WORKERS_A=("turbot" "bonito")
 
 # Hospital B
-COORD_B="sole"
-WORKERS_B=("blowfish" "turbot")
+COORD_B="sardine"
+WORKERS_B=("blowfish" "swordfish")
 
 # Hospital C
-COORD_C="bonito"
-WORKERS_C=("flounder" "shark")
+COORD_C="char"
+WORKERS_C=("pollock" "grouper")
 
 # ------------------------------------------------------------------------------
 # 3. Helper functions
